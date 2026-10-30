@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find a Certified &amp; Exchange Touchpoint — BharatBenz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Roboto',Arial,sans-serif;color:#222222;background:#FFFFFF}
+a{color:#A80C14}a:hover{color:#7E0910}
+*{box-sizing:border-box}
+button,input,select{font-family:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #F5A623;outline-offset:2px}
+.bb-btn:hover{background:#7E0910 !important}
+.bb-out:hover{background:#FFFFFF !important;color:#000000 !important}
+.bb-line{height:44px;border:0;border-bottom:1px solid #8C8C8C;background:transparent;color:#FFFFFF;font-size:16px;padding:0 2px}
+.bb-line option{color:#000000}
+.bb-nav-item{position:relative;display:flex;align-items:center}
+.bb-dd{display:none;position:absolute;top:100%;left:-14px;min-width:250px;background:#FFFFFF;box-shadow:0 10px 28px rgba(0,0,0,0.16);border-top:3px solid #A80C14;padding:8px 0;z-index:30}
+.bb-nav-item:hover .bb-dd,.bb-nav-item:focus-within .bb-dd{display:block}
+.bb-dd a{display:block;padding:11px 18px;color:#222222;text-decoration:none;font-size:14px;font-weight:400;white-space:nowrap}
+.bb-dd a:hover{background:#F4F4F4;color:#A80C14}
+.bb-top:hover{color:#A80C14 !important}
+.bb-foot a{color:#CFCFCF;text-decoration:none}
+.bb-foot a:hover{color:#FFFFFF;text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="dc">
+<div style="width: 100%; background: #FFFFFF; font-family: 'Roboto', Arial, sans-serif; color: #222222">
+
+<!-- Browser address bar -->
+<div style="background: #E8E8E8; border-bottom: 1px solid #CFCFCF; padding: 8px 16px; display: flex; align-items: center; gap: 12px">
+<div aria-hidden="true" style="display: flex; gap: 6px; flex: none"><span style="width: 12px; height: 12px; border-radius: 50%; background: #BDBDBD"></span><span style="width: 12px; height: 12px; border-radius: 50%; background: #BDBDBD"></span><span style="width: 12px; height: 12px; border-radius: 50%; background: #BDBDBD"></span></div>
+<div style="flex: 1; min-width: 0; max-width: 720px; margin: 0 auto; background: #FFFFFF; border-radius: 999px; height: 32px; padding: 0 14px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #222222; overflow: hidden; white-space: nowrap">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4A4A4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+<span>https://www.bharatbenz.com/certified/<strong style="color: #000000">find-a-touchpoint</strong></span>
+</div>
+</div>
+
+<!-- Utility bar (live site) -->
+<div style="background: {{accent}}; color: #FFFFFF; font-size: 12px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 24px; min-height: 34px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px">
+<span style="color: #FFC266; font-weight: 500">Customer Toll Free No. : <a href="tel:180030012345" style="color: #FFC266; text-decoration: none">1800 300 12345</a></span>
+<nav aria-label="Utility" style="display: flex; gap: 18px; flex-wrap: wrap; align-items: center">
+<a href="#" style="color: #FFFFFF; text-decoration: none">Newsroom</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Image Gallery</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Blog</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">About us</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Construction &amp; Mining Range Launch</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Contact us</a>
+<a href="https://www.bharatbenz.com/hi/" lang="hi" style="background: #000000; color: #FFFFFF; text-decoration: none; padding: 9px 14px">हिंदी</a>
+</nav>
+</div>
+</div>
+
+<!-- Header (live site menu) -->
+<header style="background: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,0.08); position: relative; z-index: 10">
+<div style="max-width: 1280px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<a href="index.html" aria-label="BharatBenz home" style="display: flex; align-items: center; gap: 12px; text-decoration: none; flex: none">
+<img src="../assets/certified/bharatbenz-emblem.png" alt="" style="height: 48px; width: auto; display: block">
+<img src="../assets/certified/bharatbenz-wordmark-dark.png" alt="BharatBenz" style="height: 15px; width: auto; display: block">
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-size: 14px">
+<div class="bb-nav-item"><a href="#" aria-haspopup="true" class="bb-top" style="display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Trucks<svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a><div class="bb-dd"><a href="#">MDT (10-19 tonnes)</a><a href="#">HDT R (28-48 tonnes)</a><a href="#">HDT RT (28-48 tonnes)</a><a href="#">HDT C (19-35 tonnes)</a><a href="#">HDT T (40-55 tonnes)</a></div></div><div class="bb-nav-item"><a href="#" aria-haspopup="true" class="bb-top" style="display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Buses<svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a><div class="bb-dd"><a href="#">School Bus</a><a href="#">Staff Bus</a><a href="#">MDB 1914 Chassis</a><a href="#">HDB 1624 Chassis</a></div></div><div class="bb-nav-item"><a href="#" aria-haspopup="true" class="bb-top" style="display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Parts and Services<svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a><div class="bb-dd"><a href="#">Rakshana</a><a href="#">Truckonnect</a><a href="#">Genuine Parts</a><a href="#">Share your Feedback</a></div></div><div class="bb-nav-item"><a href="index.html" aria-haspopup="true" class="bb-top" style="display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Pre-Owned Trucks<svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a><div class="bb-dd"><a href="index.html">BharatBenz Certified &amp; Exchange</a><a href="truck-listing.html">Truck Listing</a><a href="index.html">Sell / Exchange Your Truck</a></div></div><div class="bb-nav-item"><a href="#network" aria-current="page" class="bb-top" style="display: inline-flex; align-items: center; min-height: 44px; color: {{accent}}; text-decoration: none; font-weight: 700">Dealership</a></div><div class="bb-nav-item"><a href="#" aria-haspopup="true" class="bb-top" style="display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Customers<svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a><div class="bb-dd"><a href="#">Testimonials</a><a href="#">Kilometer Millionaire</a><a href="#">Important Information for Customers</a></div></div><div class="bb-nav-item"><a href="#" class="bb-top" style="display: inline-flex; align-items: center; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Newsroom</a></div><div class="bb-nav-item"><a href="#" class="bb-top" style="display: inline-flex; align-items: center; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Blog</a></div><div class="bb-nav-item"><a href="#" class="bb-top" style="display: inline-flex; align-items: center; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Contact us</a></div>
+<a href="index.html" class="bb-btn" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; padding: 0 18px; height: 44px; display: inline-flex; align-items: center; border-radius: 2px; font-weight: 700; margin-left: 4px">Enquire Now</a>
+</nav>
+</div>
+</header>
+
+<!-- Breadcrumb -->
+<div style="background: #FFFFFF">
+<div style="max-width: 1280px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
+<nav aria-label="Breadcrumb" style="font-size: 12px; color: #333333; display: flex; align-items: center; gap: 6px"><a href="#" style="color: #333333; text-decoration: none">Home</a><svg aria-hidden="true" width="8" height="8" viewBox="0 0 8 8"><path d="M2 0l4 4-4 4z" fill="{{accent}}"></path></svg><a href="index.html" style="color: #333333; text-decoration: none">BharatBenz Certified</a><svg aria-hidden="true" width="8" height="8" viewBox="0 0 8 8"><path d="M2 0l4 4-4 4z" fill="{{accent}}"></path></svg><span style="color: {{accent}}">Find a Touchpoint</span></nav>
+<a href="index.html" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #222222; font-size: 14px; font-weight: 700; text-decoration: none"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>Back to Certified &amp; Exchange</a>
+</div>
+</div>
+
+<!-- Network map + filters -->
+<section id="network" aria-labelledby="net-h" style="background: #FFFFFF">
+<div style="max-width: 1280px; margin: 0 auto; padding: 24px 24px 72px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h1 id="net-h" style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 700; color: {{accent}}">Certified &amp; Exchange Network</h1>
+<p style="margin: 0; font-size: 16px; font-weight: 700; font-style: italic; color: #222222">Find a touchpoint near you.</p>
+</div>
+
+<form aria-label="Find a touchpoint" style="background: #000000; padding: 20px 24px 24px; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px; color: #FFFFFF">
+<label style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px; font-size: 15px">Choose State
+<select onChange="{{onState}}" value="{{fState}}" class="bb-line">
+<template data-for="stateOpts" data-as="o"><option value="{{o}}">{{o}}</option></template>
+</select></label>
+<label style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px; font-size: 15px">Choose City
+<select onChange="{{onCity}}" value="{{fCity}}" class="bb-line">
+<template data-for="cityOpts" data-as="o"><option value="{{o}}">{{o}}</option></template>
+</select></label>
+<a href="index.html" class="bb-btn" style="flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 22px; background: {{accent}}; color: #FFFFFF; text-decoration: none; border-radius: 3px; font-weight: 700; font-size: 15px; text-transform: uppercase">Find Vehicles to Buy</a>
+</form>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
+<div style="flex: 3 1 480px; min-width: 0; background: #F4F4F4; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<span style="font-size: 13px; font-weight: 700; color: #333333; margin-right: 4px">Show:</span>
+<button type="button" onClick="{{toggleC}}" aria-pressed="{{showC}}" style="{{legendC}}"><svg aria-hidden="true" width="14" height="19" viewBox="0 0 28 38"><path d="M14 1C6.8 1 1 6.6 1 13.6C1 23 14 37 14 37S27 23 27 13.6C27 6.6 21.2 1 14 1Z" fill="{{accent}}"></path><circle cx="14" cy="13.5" r="5" fill="#FFFFFF"></circle></svg>Certified</button>
+<button type="button" onClick="{{toggleE}}" aria-pressed="{{showE}}" style="{{legendE}}"><svg aria-hidden="true" width="14" height="19" viewBox="0 0 28 38"><path d="M14 1C6.8 1 1 6.6 1 13.6C1 23 14 37 14 37S27 23 27 13.6C27 6.6 21.2 1 14 1Z" fill="#000000"></path><circle cx="14" cy="13.5" r="5" fill="#FFFFFF"></circle></svg>Exchange</button>
+<span style="font-size: 13px; color: #4A4A4A; display: inline-flex; align-items: center; gap: 6px; margin-left: 8px"><svg aria-hidden="true" width="14" height="19" viewBox="0 0 28 38"><path d="M14 1C6.8 1 1 6.6 1 13.6C1 23 14 37 14 37S27 23 27 13.6C27 6.6 21.2 1 14 1Z" fill="{{accent}}"></path><circle cx="14" cy="13.5" r="5.5" fill="#000000"></circle></svg>Both</span>
+</div>
+
+<!-- Realistic map viewport -->
+<div role="region" aria-label="Map of India showing Certified and Exchange touchpoints" style="position: relative; width: 100%; aspect-ratio: 1000 / 1094; overflow: hidden; background: #AAD3EF; border: 1px solid #C9C9C9; border-radius: 4px">
+<div style="{{worldStyle}}">
+<template data-if="isMapView">
+<img src="../assets/certified/india-map.svg" alt="Road map of India with neighbouring countries, rivers and national highway corridors" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; user-select: none" draggable="false">
+</template>
+<template data-if="isTerrainView">
+<img src="../assets/certified/india-terrain.svg" alt="Terrain map of India showing the Himalaya, Thar desert, plains, plateaus and rivers" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; user-select: none" draggable="false">
+</template>
+<template data-for="mapLabels" data-as="l">
+<span aria-hidden="true" style="{{l.style}}"><span style="{{l.dotStyle}}"></span>{{l.text}}</span>
+</template>
+<template data-for="pins" data-as="d">
+<button type="button" onClick="{{d.pick}}" aria-label="{{d.city}} – {{d.typeLabel}}" aria-pressed="{{d.selected}}" style="{{d.pinStyle}}">
+<svg aria-hidden="true" width="28" height="38" viewBox="0 0 28 38" style="display: block; flex: none"><path d="M14 1C6.8 1 1 6.6 1 13.6C1 23 14 37 14 37S27 23 27 13.6C27 6.6 21.2 1 14 1Z" fill="{{d.fill}}" stroke="#FFFFFF" stroke-width="1.6"></path><circle cx="14" cy="13.5" r="5.2" fill="{{d.core}}"></circle></svg>
+<span style="{{d.tagStyle}}">{{d.city}}</span>
+</button>
+</template>
+<template data-if="hasPopup">
+<div style="{{popupStyle}}">
+<div style="position: relative; background: #FFFFFF; border-radius: 6px; box-shadow: 0 6px 20px rgba(0,0,0,0.28); padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; text-align: left">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px">
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<span style="font-size: 17px; font-weight: 700; color: #000000">{{popup.city}}</span>
+<span style="{{popup.badgeStyle}}">{{popup.typeLabel}}</span>
+</div>
+<button type="button" onClick="{{closePopup}}" aria-label="Close dealer details" style="flex: none; width: 44px; height: 44px; margin: -12px -14px 0 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #4A4A4A"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+<span style="font-size: 13px; line-height: 1.5; color: #4A4A4A">[Dealer name &amp; address], {{popup.city}}, {{popup.state}}</span>
+<div style="display: flex; gap: 8px; margin-top: 2px">
+<a href="#" class="bb-btn" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 44px; background: {{accent}}; border-radius: 3px; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>Call</a>
+<a href="#" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 44px; border: 1px solid #000000; border-radius: 3px; color: #000000; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8z"></path></svg>Directions</a>
+</div>
+<span aria-hidden="true" style="position: absolute; left: 50%; bottom: -7px; width: 14px; height: 14px; background: #FFFFFF; transform: translateX(-50%) rotate(45deg); box-shadow: 3px 3px 4px rgba(0,0,0,0.12)"></span>
+</div>
+</div>
+</template>
+</div>
+
+<!-- Map type toggle -->
+<div role="group" aria-label="Map style" style="position: absolute; top: 12px; left: 12px; z-index: 8; display: flex; background: #FFFFFF; border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,0.3); overflow: hidden">
+<button type="button" onClick="{{setMapView}}" aria-pressed="{{isMapView}}" style="{{viewBtnMap}}">Map</button>
+<button type="button" onClick="{{setTerrainView}}" aria-pressed="{{isTerrainView}}" style="{{viewBtnTerrain}}">Terrain</button>
+</div>
+
+<!-- Zoom controls -->
+<div style="position: absolute; top: 12px; right: 12px; z-index: 8; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; flex-direction: column; background: #FFFFFF; border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,0.3); overflow: hidden">
+<button type="button" onClick="{{zoomIn}}" aria-label="Zoom in" style="{{zoomInStyle}}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></button>
+<span aria-hidden="true" style="height: 1px; margin: 0 8px; background: #E0E0E0"></span>
+<button type="button" onClick="{{zoomOut}}" aria-label="Zoom out" style="{{zoomOutStyle}}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14"></path></svg></button>
+</div>
+<button type="button" onClick="{{recenter}}" aria-label="Show all of India" style="width: 44px; height: 44px; border: 0; border-radius: 3px; background: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,0.3); color: #333333; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path></svg></button>
+</div>
+
+<!-- Scale bar & credit -->
+<div aria-hidden="true" style="position: absolute; left: 12px; bottom: 12px; z-index: 8; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; background: rgba(255,255,255,0.85); padding: 4px 8px 6px; border-radius: 2px; width: {{scaleBoxW}}">
+<span style="font-size: 11px; font-weight: 500; color: #333333">{{scaleLabel}}</span>
+<span style="display: block; width: 100%; height: 6px; border: 2px solid #333333; border-top: 0"></span>
+</div>
+<span style="position: absolute; right: 0; bottom: 0; z-index: 8; background: rgba(255,255,255,0.85); padding: 3px 8px; font-size: 11px; color: #4A4A4A">Indicative map · zoom {{zoomLabel}}</span>
+</div>
+<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #5B5B5B">Sample dealer locations for layout. India's external boundary follows the official depiction; the live build should use Survey of India–approved map data (e.g. Google Maps India) populated from the dealer master list.</p>
+</div>
+
+<div style="flex: 2 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 14px; font-weight: 700; color: #222222">{{dealerCountLabel}}</span>
+<div style="display: flex; flex-direction: column; gap: 12px; max-height: 820px; overflow-y: auto; padding-right: 4px">
+<template data-for="pins" data-as="d">
+<div style="{{d.cardStyle}}">
+<div style="display: flex; justify-content: space-between; gap: 12px; align-items: flex-start">
+<span style="font-size: 17px; font-weight: 700">Address – {{d.city}}</span>
+<span style="{{d.badgeStyle}}">{{d.typeLabel}}</span>
+</div>
+<span style="font-size: 14px; line-height: 1.5; color: #4A4A4A">[Dealer name &amp; address], {{d.city}}, {{d.state}}</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="#" class="bb-btn" style="display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; background: {{accent}}; border-radius: 3px; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>Call</a>
+<a href="#" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border: 1px solid #000000; border-radius: 3px; color: #000000; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase">Directions</a>
+<button type="button" onClick="{{d.locate}}" style="height: 40px; padding: 0 10px; border: 0; background: none; color: #000000; text-decoration: underline; font-size: 14px; cursor: pointer">Show on map</button>
+</div>
+</div>
+</template>
+<template data-if="noDealers">
+<div style="border: 1px dashed #8C8C8C; padding: 24px; font-size: 15px; color: #4A4A4A">No touchpoints match these filters. Try another state or turn on both Certified and Exchange.</div>
+</template>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer (live site) -->
+<footer class="bb-foot" style="background: #1A1A1A; color: #CFCFCF">
+<div style="max-width: 1280px; margin: 0 auto; padding: 48px 24px 0; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid #333333">
+<a href="index.html" aria-label="BharatBenz home" style="display: inline-flex; align-items: center; gap: 12px">
+<img src="../assets/certified/bharatbenz-emblem.png" alt="" style="height: 52px; width: auto; display: block">
+<img src="../assets/certified/bharatbenz-wordmark-white.png" alt="BharatBenz" style="height: 16px; width: auto; display: block">
+</a>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="index.html" class="bb-btn" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; background: {{accent}}; color: #FFFFFF; border-radius: 3px; font-size: 14px; font-weight: 700; text-transform: uppercase; text-decoration: none">Get a Quote</a>
+<a href="#" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border: 1px solid #FFFFFF; color: #FFFFFF; border-radius: 3px; font-size: 14px; font-weight: 700; text-transform: uppercase">Service Workshop</a>
+<a href="tel:180030012345" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border: 1px solid #FFFFFF; color: #FFFFFF; border-radius: 3px; font-size: 14px; font-weight: 700; text-transform: uppercase">Call Us · 1800 300 12345</a>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; flex: 1 1 170px; min-width: 0"><span style="font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px">Trucks</span><a href="#">MDT (10-19 tonnes)</a><a href="#">HDT (R) (28-48 tonnes)</a><a href="#">HDT (RT) (28-48 tonnes)</a><a href="#">HDT (C) (19-35 tonnes)</a><a href="#">HDT (T) (40-55 tonnes)</a></div><div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; flex: 1 1 170px; min-width: 0"><span style="font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px">Buses</span><a href="#">School Bus</a><a href="#">Staff Bus</a><a href="#">Medium Duty Bus Chassis</a><a href="#">Heavy Duty Bus Chassis</a></div><div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; flex: 1 1 170px; min-width: 0"><span style="font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px">Services</span><a href="#">Service Workshops</a><a href="#">Genuine Parts</a><a href="#">Rakshana</a><a href="#">Share your Feedback</a></div><div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; flex: 1 1 170px; min-width: 0"><span style="font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px">Company</span><a href="#">About us</a><a href="#network">Find a Dealer</a><a href="#">Testimonials</a><a href="#">Careers</a><a href="#">BS-VI</a></div><div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; flex: 1 1 170px; min-width: 0"><span style="font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px">Explore</span><a href="#">Newsroom</a><a href="#">Blog</a><a href="#">Select My Truck</a><a href="#network">Authorized Dealers</a><a href="#">Contact us</a></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 6px">Follow us</span>
+<a href="https://www.facebook.com/bharatbenz1" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #4A4A4A; border-radius: 22px; font-size: 13px">Facebook</a><a href="https://www.instagram.com/bharatbenz/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #4A4A4A; border-radius: 22px; font-size: 13px">Instagram</a><a href="https://twitter.com/BharatBenz1" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #4A4A4A; border-radius: 22px; font-size: 13px">X (Twitter)</a><a href="https://www.youtube.com/user/BharatBenzTrucks1" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #4A4A4A; border-radius: 22px; font-size: 13px">YouTube</a><a href="https://www.linkedin.com/showcase/bharatbenz" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #4A4A4A; border-radius: 22px; font-size: 13px">LinkedIn</a>
+</div>
+</div>
+<div style="border-top: 1px solid #333333; margin-top: 36px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 12px">
+<span style="color: #BDBDBD">COPYRIGHT © 2026 BHARATBENZ. ALL RIGHTS RESERVED.</span>
+<nav aria-label="Legal" style="display: flex; flex-wrap: wrap; gap: 18px">
+<a href="https://www.daimlertruck.com/en" target="_blank" rel="noopener">Daimler Trucks</a>
+<a href="https://www.bharatbenz.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+<a href="https://www.bharatbenz.com/legal-notices-and-terms" target="_blank" rel="noopener">Legal Disclaimer</a>
+</nav>
+</div>
+</div>
+</footer>
+
+</div>
+</template>
+<script>
+(function () {
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g, WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+  var BOOL = { disabled: 1, checked: 1, selected: 1, required: 1, hidden: 1, open: 1 };
+  function look(scope, path) {
+    if (path === 'true') return true; if (path === 'false') return false;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split('.'), v = scope[parts[0]];
+    for (var i = 1; i < parts.length && v != null; i++) v = v[parts[i]];
+    return v;
+  }
+  function str(v) { return v == null ? '' : String(v); }
+  function fill(text, scope) { return text.replace(HOLE, function (_, p) { return str(look(scope, p)); }); }
+  function kids(node) { return node.content ? node.content.childNodes : node.childNodes; }
+  function renderAll(nodes, scope, out) { for (var i = 0; i < nodes.length; i++) render(nodes[i], scope, out); }
+  function render(node, scope, out) {
+    if (node.nodeType === 3) { out.appendChild(document.createTextNode(fill(node.data, scope))); return; }
+    if (node.nodeType !== 1) return;
+    if (node.localName === 'template' && node.hasAttribute('data-for')) {
+      var list = look(scope, node.getAttribute('data-for')) || [], as = node.getAttribute('data-as');
+      for (var i = 0; i < list.length; i++) { var sc = Object.create(scope); sc[as] = list[i]; sc.$index = i; renderAll(kids(node), sc, out); }
+      return;
+    }
+    if (node.localName === 'template' && node.hasAttribute('data-if')) {
+      if (look(scope, node.getAttribute('data-if'))) renderAll(kids(node), scope, out);
+      return;
+    }
+    var el = document.createElementNS(node.namespaceURI, node.localName), valueProp;
+    for (var a = 0; a < node.attributes.length; a++) {
+      var at = node.attributes[a], name = at.name, val = at.value, w = WHOLE.exec(val);
+      if (name.slice(0, 2) === 'on' && w) {
+        var fn = look(scope, w[1]), ev = name.slice(2);
+        if (ev === 'change') ev = 'input';
+        if (typeof fn === 'function') el.addEventListener(ev, fn);
+        continue;
+      }
+      if (w) {
+        var v = look(scope, w[1]);
+        if (name === 'value') { valueProp = str(v); continue; }
+        if (BOOL[name]) { if (v) el.setAttribute(name, ''); if (name === 'checked') el.checked = !!v; continue; }
+        if (v === false || v == null) { if (name.slice(0, 5) === 'aria-') el.setAttribute(name, 'false'); continue; }
+        el.setAttribute(name, str(v));
+        continue;
+      }
+      el.setAttribute(name, val.indexOf('{{') >= 0 ? fill(val, scope) : val);
+    }
+    renderAll(kids(node), scope, el);
+    if (valueProp !== undefined) { el.value = valueProp; el.setAttribute('value', valueProp); }
+    out.appendChild(el);
+  }
+  window.DCLogic = function DCLogic(props) { this.props = props; this.state = {}; };
+  DCLogic.prototype.setState = function (patch) {
+    if (typeof patch === 'function') patch = patch(this.state, this.props);
+    var changed = false;
+    for (var k in patch) if (this.state[k] !== patch[k]) { changed = true; break; }
+    this.state = Object.assign({}, this.state, patch);
+    if (changed && this.__render) this.__render();
+  };
+  DCLogic.prototype.forceUpdate = function () { if (this.__render) this.__render(); };
+  window.mountDC = function (Component, props) {
+    var tpl = document.getElementById('dc'), root = document.getElementById('app');
+    var comp = new Component(props);
+    comp.__render = function () {
+      var act = document.activeElement, id = act && act.id, s0 = null, s1 = null;
+      try { s0 = act.selectionStart; s1 = act.selectionEnd; } catch (e) {}
+      var open = []; root.querySelectorAll('details').forEach(function (d, i) { if (d.open) open.push(i); });
+      var frag = document.createDocumentFragment();
+      renderAll(tpl.content.childNodes, comp.renderVals(), frag);
+      root.replaceChildren(frag);
+      var ds = root.querySelectorAll('details'); open.forEach(function (i) { if (ds[i]) ds[i].open = true; });
+      if (id) { var n = document.getElementById(id); if (n) { n.focus(); try { if (s0 != null) n.setSelectionRange(s0, s1); } catch (e) {} } }
+    };
+    comp.__render();
+  };
+})();
+</script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { fState: 'All states', fCity: 'All cities', dealer: 'chennai', showC: true, showE: true, zoom: 1, cx: 50, cy: 50, popup: true, view: 'map' };
+  }
+  renderVals() {
+    const s = this.state;
+    const accent = this.props.accent ?? '#A80C14';
+
+    const dealers = [
+      // x / y = % position on the projected (Mercator) map of India
+      { id: 'delhi', city: 'New Delhi', state: 'Delhi', type: 'both', x: 33.47, y: 30.35 },
+      { id: 'jaipur', city: 'Jaipur', state: 'Rajasthan', type: 'certified', x: 29.03, y: 35.84 },
+      { id: 'lucknow', city: 'Lucknow', state: 'Uttar Pradesh', type: 'certified', x: 45.16, y: 36.03 },
+      { id: 'guwahati', city: 'Guwahati', state: 'Assam', type: 'certified', x: 78.87, y: 38.3 },
+      { id: 'ahmedabad', city: 'Ahmedabad', state: 'Gujarat', type: 'exchange', x: 18.97, y: 48.1 },
+      { id: 'indore', city: 'Indore', state: 'Madhya Pradesh', type: 'exchange', x: 29.25, y: 49.03 },
+      { id: 'kolkata', city: 'Kolkata', state: 'West Bengal', type: 'both', x: 68.31, y: 49.5 },
+      { id: 'nagpur', city: 'Nagpur', state: 'Maharashtra', type: 'exchange', x: 39.34, y: 53.87 },
+      { id: 'mumbai', city: 'Mumbai', state: 'Maharashtra', type: 'both', x: 19.94, y: 60.17 },
+      { id: 'pune', city: 'Pune', state: 'Maharashtra', type: 'certified', x: 23, y: 61.85 },
+      { id: 'hyderabad', city: 'Hyderabad', state: 'Telangana', type: 'both', x: 37.47, y: 65.25 },
+      { id: 'bengaluru', city: 'Bengaluru', state: 'Karnataka', type: 'both', x: 34.66, y: 78.33 },
+      { id: 'chennai', city: 'Chennai', state: 'Tamil Nadu', type: 'both', x: 43.03, y: 78.01 },
+      { id: 'kochi', city: 'Kochi', state: 'Kerala', type: 'exchange', x: 30.53, y: 87.2 }
+    ];
+    const states = Array.from(new Set(dealers.map((d) => d.state))).sort();
+    const stateOpts = ['All states'].concat(states);
+    const inState = dealers.filter((d) => s.fState === 'All states' || d.state === s.fState);
+    const cityOpts = ['All cities'].concat(inState.map((d) => d.city).sort());
+    const typeOk = (t) => (t === 'both' ? (s.showC || s.showE) : t === 'certified' ? s.showC : s.showE);
+    const shown = inState.filter((d) => (s.fCity === 'All cities' || d.city === s.fCity) && typeOk(d.type));
+    const typeLabel = { both: 'Certified + Exchange', certified: 'Certified', exchange: 'Exchange' };
+
+    // ---- Map viewport: zoom / pan / labels ----
+    const z = s.zoom;
+    const k = 1 / z;
+    const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+    const tx = clamp(50 - s.cx * z, 100 - 100 * z, 0);
+    const ty = clamp(50 - s.cy * z, 100 - 100 * z, 0);
+    const ease = 'transition: transform 0.35s ease; ';
+    const badgeFor = (t) => 'align-self: flex-start; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 8px; ' + (t === 'exchange' ? 'background: #000000; color: #FFFFFF' : t === 'certified' ? 'background: ' + accent + '; color: #FFFFFF' : 'background: #FFFFFF; color: ' + accent + '; border: 1px solid ' + accent);
+
+    const pins = shown.map((d) => {
+      const sel = s.dealer === d.id;
+      const fill = d.type === 'exchange' ? '#000000' : accent;
+      const core = d.type === 'both' ? '#000000' : '#FFFFFF';
+      const popupOpen = sel && s.popup;
+      const showTag = !popupOpen && (z >= 2 || sel);
+      return Object.assign({}, d, {
+        typeLabel: typeLabel[d.type],
+        selected: sel,
+        fill, core,
+        pick: () => this.setState({ dealer: d.id, popup: true, cx: d.x, cy: d.y }),
+        locate: () => this.setState({ dealer: d.id, popup: true, zoom: Math.max(s.zoom, 3), cx: d.x, cy: d.y }),
+        pinStyle: 'position: absolute; left: ' + d.x + '%; top: ' + d.y + '%; width: 32px; height: 44px; padding: 0; border: 0; background: transparent; cursor: pointer; display: flex; align-items: flex-end; justify-content: center; transform-origin: 0 0; ' + ease + 'transform: scale(' + (k * (sel ? 1.3 : 1)) + ') translate(-50%, -100%); z-index: ' + (sel ? 4 : 2) + '; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.35))',
+        tagStyle: 'position: absolute; left: 30px; top: 4px; white-space: nowrap; font-size: 12px; font-weight: 700; color: #1A1A1A; text-shadow: 0 0 3px #FFFFFF, 0 0 3px #FFFFFF, 0 0 2px #FFFFFF; pointer-events: none; display: ' + (showTag ? 'block' : 'none'),
+        cardStyle: 'background: #FFFFFF; border: 1px solid #DCDCDC; border-left: 4px solid ' + (sel ? accent : '#DCDCDC') + '; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px',
+        badgeStyle: 'flex: none; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 8px; ' + (d.type === 'exchange' ? 'background: #000000; color: #FFFFFF' : d.type === 'certified' ? 'background: ' + accent + '; color: #FFFFFF' : 'background: #FFFFFF; color: ' + accent + '; border: 1px solid ' + accent)
+      });
+    });
+    const legend = (on) => 'display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 3px; font-size: 14px; font-weight: 700; cursor: pointer; ' + (on ? 'background: #FFFFFF; color: #000000; border: 1px solid #000000' : 'background: #E6E6E6; color: #5B5B5B; border: 1px dashed #8C8C8C');
+
+    const selPin = pins.find((p) => p.selected);
+    const hasPopup = !!(selPin && s.popup);
+    const popup = selPin ? { city: selPin.city, state: selPin.state, typeLabel: selPin.typeLabel, badgeStyle: badgeFor(selPin.type) } : { city: '', state: '', typeLabel: '', badgeStyle: '' };
+    const popupStyle = selPin ? 'position: absolute; left: ' + selPin.x + '%; top: ' + selPin.y + '%; width: 252px; z-index: 6; transform-origin: 0 0; ' + ease + 'transform: scale(' + k + ') translate(-50%, calc(-100% - 60px))' : 'display: none';
+
+    // Labels drawn over the base map (kept in HTML so they stay crisp in Roboto at every zoom)
+    const L = [
+      ['PAKISTAN', 8.75, 31.04, 'country', 1], ['AFGHANISTAN', 7.5, 13.7, 'country', 1], ['CHINA', 62.5, 15.07, 'country', 1], ['NEPAL', 54.38, 31.52, 'country', 1], ['BHUTAN', 74.84, 33.9, 'country', 1], ['BANGLADESH', 74.2, 45.05, 'country', 1], ['MYANMAR', 90.94, 52.79, 'country', 1], ['SRI LANKA', 44.38, 93.5, 'country', 1],
+      ['Arabian Sea', 11.5, 70.88, 'sea', 1], ['Bay of Bengal', 64.5, 70.88, 'sea', 1], ['Laccadive Sea', 22.5, 94.5, 'sea', 1], ['Andaman Sea', 92.0, 84.5, 'sea', 1],
+      ['RAJASTHAN', 22.19, 39.5, 'state', 1], ['GUJARAT', 15.0, 51.2, 'state', 1], ['MAHARASHTRA', 29.38, 57.68, 'state', 1], ['MADHYA PRADESH', 36.56, 45.4, 'state', 1], ['UTTAR PRADESH', 46.5, 31.6, 'state', 1], ['BIHAR', 60, 39.2, 'state', 1], ['ODISHA', 56.5, 54.2, 'state', 1], ['CHHATTISGARH', 48.0, 49.6, 'state', 1], ['JHARKHAND', 59.06, 46.14, 'state', 2], ['TELANGANA', 40.5, 61.0, 'state', 1], ['ANDHRA PRADESH', 41.0, 71.77, 'state', 1], ['KARNATAKA', 29.69, 72.0, 'state', 1], ['TAMIL NADU', 37.19, 83.0, 'state', 1], ['PUNJAB', 27.81, 22.99, 'state', 2], ['HIMACHAL PRADESH', 33.44, 19.3, 'state', 2], ['UTTARAKHAND', 40, 25.31, 'state', 2], ['JAMMU & KASHMIR', 24.5, 14.6, 'state', 1], ['LADAKH', 35.63, 10.25, 'state', 1], ['ASSAM', 84.0, 36.9, 'state', 1], ['ARUNACHAL PRADESH', 87.19, 31.4, 'state', 1], ['KERALA', 30.94, 84.0, 'state', 2], ['HARYANA', 30.31, 28.27, 'state', 2], ['WEST BENGAL', 66.3, 45.6, 'state', 2],
+      ['Bhopal', 34.09, 47.36, 'city', 2], ['Patna', 58.25, 40.05, 'city', 2], ['Raipur', 47.28, 53.56, 'city', 2], ['Bhubaneswar', 60.38, 56.46, 'city', 2], ['Visakhapatnam', 52.25, 64.35, 'city', 2], ['Chandigarh', 32.13, 23.38, 'city', 2], ['Srinagar', 25.94, 12.05, 'city', 2], ['Madurai', 36.31, 87.2, 'city', 2], ['Coimbatore', 32.69, 84.03, 'city', 2], ['Surat', 19.78, 53.81, 'city', 2], ['Varanasi', 51.47, 40.9, 'city', 2], ['Agra', 35.97, 34.98, 'city', 2], ['Kanpur', 43.22, 37.31, 'city', 2], ['Vijayawada', 44.22, 67.88, 'city', 2], ['Thiruvananthapuram', 32.66, 91.28, 'city', 2], ['Goa', 23.28, 71.17, 'city', 2], ['Port Blair', 81.97, 82.28, 'city', 1], ['Mangaluru', 26.13, 78.51, 'city', 2], ['Rajkot', 13.44, 50.33, 'city', 2], ['Udaipur', 22.53, 43.23, 'city', 2]
+    ];
+    const terrain = s.view === 'terrain';
+    const labelLook = {
+      country: 'font-size: 12px; font-weight: 500; letter-spacing: 0.22em; color: #5E5E5E',
+      sea: 'font-size: 14px; font-style: italic; letter-spacing: 0.06em; color: ' + (terrain ? '#255A82' : '#2C628C'),
+      state: 'font-size: 10px; font-weight: 500; letter-spacing: 0.14em; color: ' + (terrain ? '#5F584A' : '#6B6455'),
+      city: 'font-size: 12px; color: #2A2A2A; text-shadow: 0 0 3px #FFFFFF, 0 0 3px #FFFFFF'
+    };
+    const mapLabels = L.map(([text, x, y, kind, minZ]) => ({
+      text,
+      style: 'position: absolute; left: ' + x + '%; top: ' + y + '%; z-index: 1; white-space: nowrap; pointer-events: none; transform-origin: 0 0; ' + ease + 'transform: scale(' + k + ') translate(' + (kind === 'city' ? '-4px' : '-50%') + ', -50%); align-items: center; gap: 5px; ' + labelLook[kind] + '; display: ' + (z >= minZ ? 'flex' : 'none'),
+      dotStyle: kind === 'city' ? 'width: 6px; height: 6px; border-radius: 50%; background: #FFFFFF; border: 1.5px solid #555555; flex: none' : 'display: none'
+    }));
+
+    const zoomBtn = (enabled) => 'width: 44px; height: 44px; border: 0; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: ' + (enabled ? 'pointer' : 'default') + '; color: ' + (enabled ? '#333333' : '#BDBDBD');
+    const viewBtn = (on) => 'height: 44px; padding: 0 16px; border: 0; font-size: 14px; cursor: pointer; ' + (on ? 'background: #FFFFFF; color: #000000; font-weight: 700' : 'background: #F1F1F1; color: #4A4A4A; font-weight: 400');
+    const KM_PER_PCT = 33.03; // km per 1% of map width at zoom 1
+    const scaleKm = { 1: 500, 2: 200, 3: 100, 4: 100 }[z];
+    const zoomAround = (nz) => {
+      const c = selPin && s.popup ? { x: selPin.x, y: selPin.y } : { x: s.cx, y: s.cy };
+      this.setState({ zoom: nz, cx: nz === 1 ? 50 : c.x, cy: nz === 1 ? 50 : c.y });
+    };
+
+    return {
+      accent,
+      stateOpts, cityOpts,
+      fState: s.fState, fCity: s.fCity,
+      onState: (e) => this.setState({ fState: e.target.value, fCity: 'All cities' }),
+      onCity: (e) => this.setState({ fCity: e.target.value }),
+      showC: s.showC, showE: s.showE,
+      toggleC: () => this.setState({ showC: !s.showC }),
+      toggleE: () => this.setState({ showE: !s.showE }),
+      legendC: legend(s.showC), legendE: legend(s.showE),
+      pins,
+      worldStyle: 'position: absolute; inset: 0; transform-origin: 0 0; ' + ease + 'transform: translate(' + tx + '%, ' + ty + '%) scale(' + z + ')',
+      isMapView: !terrain, isTerrainView: terrain,
+      setMapView: () => this.setState({ view: 'map' }),
+      setTerrainView: () => this.setState({ view: 'terrain' }),
+      viewBtnMap: viewBtn(!terrain), viewBtnTerrain: viewBtn(terrain),
+      mapLabels,
+      hasPopup, popup, popupStyle,
+      closePopup: () => this.setState({ popup: false }),
+      zoomIn: () => { if (z < 4) zoomAround(z + 1); },
+      zoomOut: () => { if (z > 1) zoomAround(z - 1); },
+      zoomInStyle: zoomBtn(z < 4), zoomOutStyle: zoomBtn(z > 1),
+      recenter: () => this.setState({ zoom: 1, cx: 50, cy: 50 }),
+      zoomLabel: z + '×',
+      scaleLabel: scaleKm + ' km',
+      scaleBoxW: 'calc(' + (scaleKm / KM_PER_PCT * z) + '% + 16px)',
+      noDealers: pins.length === 0,
+      dealerCountLabel: pins.length + (pins.length === 1 ? ' touchpoint' : ' touchpoints') + (s.fState === 'All states' ? ' across India' : ' in ' + s.fState)
+    };
+  }
+}
+mountDC(Component, {"accent": "#A80C14"});
+</script>
+</body>
+</html>
