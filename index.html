@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parivartan Scheme — BharatBenz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Noto+Sans+Devanagari:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#D71920}a:hover{color:#1A1A1A}
+input,select,button{font-family:inherit}
+summary{cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="dc">
+<div style="font-family: 'Roboto', 'Noto Sans Devanagari', system-ui, sans-serif; color: #1A1A1A; background: #FFFFFF; font-size: 16px; line-height: 1.55; position: relative">
+
+<!-- Utility bar -->
+<div style="background: #000000; color: #C9CCCF; font-size: 13px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 8px 24px; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 20px">
+<a href="#" style="color: #C9CCCF; text-decoration: none">Newsroom</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Image Gallery</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Blog</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">About us</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Construction &amp; Mining Range Launch</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Contact us</a>
+<div role="group" aria-label="Language" style="display: flex; border: 1px solid #4A4D50; border-radius: 4px; overflow: hidden">
+<button type="button" onClick="{{setHi}}" aria-pressed="{{isHi}}" style="{{hiStyle}}">हिंदी</button>
+<button type="button" onClick="{{setEn}}" aria-pressed="{{isEn}}" style="{{enStyle}}">EN</button>
+</div>
+</div>
+</div>
+
+<!-- Header -->
+<header style="background: #FFFFFF; border-bottom: 1px solid #DDDDDD">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+<a href="#" aria-label="BharatBenz home" style="display: flex; align-items: center; gap: 12px; text-decoration: none">
+<img src="assets/bharatbenz-logo.png" alt="BharatBenz" style="display: block; height: 60px; width: auto">
+</a>
+<nav aria-label="Main" onMouseLeave="{{closeMenu}}" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; flex: 1 1 480px; justify-content: flex-end; font-size: 15px; font-weight: 600">
+<template data-for="navItems" data-as="n">
+<div style="position: relative">
+<button type="button" onMouseEnter="{{n.open}}" onClick="{{n.toggle}}" aria-expanded="{{n.isOpen}}" style="{{n.style}}">{{n.label}}<template data-if="n.hasSub"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></template></button>
+<template data-if="n.showMenu">
+<div style="position: absolute; top: 100%; left: -12px; z-index: 30; min-width: 250px; background: #FFFFFF; border-top: 3px solid #D71920; border-radius: 0 0 6px 6px; box-shadow: 0 12px 28px rgba(0,0,0,0.18); padding: 8px 0; display: flex; flex-direction: column">
+<template data-for="n.items" data-as="i">
+<a href="#" style="display: block; padding: 10px 18px; color: #1A1A1A; text-decoration: none; font-weight: 500">{{i.label}}</a>
+</template>
+</div>
+</template>
+</div>
+</template>
+</nav>
+<a href="#enquire" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 4px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Enquire Now</a>
+</div>
+</header>
+
+<!-- Hero banner -->
+<section aria-label="Parivartan banner" style="background: #FFFFFF">
+<img src="assets/parivartan-banner.jpg" alt="Parivartan with BharatBenz: Upgrade to BS-VI trucks and buses now. Check your eligibility for scrappage or exchange benefits today." style="display: block; width: 100%; height: auto; aspect-ratio: 2419 / 1209; object-fit: cover">
+<div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; font-size: 14px; color: #5E5E5E">
+<a href="#" style="color: #5E5E5E; text-decoration: none">Home</a> › <span style="color: #1A1A1A; font-weight: 600">Parivartan Scheme</span>
+</div>
+</section>
+
+<!-- What is Parivartan -->
+<section id="overview" style="background: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 64px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 3 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #D71920">Government of India initiative · परिवर्तन</p>
+<h1 style="margin: 0; font-family: 'Roboto', sans-serif; font-size: 52px; line-height: 1.02; font-weight: 700; text-transform: uppercase; color: #1A1A1A">What is the Parivartan Scheme?</h1>
+<p style="margin: 0; font-size: 18px; color: #4A4A4A">Parivartan helps owners of older commercial vehicles replace them with cleaner, more efficient BS-VI trucks and buses. Owners of eligible vehicles in the Delhi NCR region can avail tax concessions, registration fee waiver, interest subsidy and additional OEM benefits from BharatBenz.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+<a href="#eligibility" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 14px 26px; border-radius: 4px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Check your eligibility</a>
+<a href="find-a-dealer.html" style="border: 2px solid #D71920; color: #D71920; text-decoration: none; font-weight: 600; padding: 12px 24px; border-radius: 4px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Locate a dealer</a>
+</div>
+</div>
+<div style="flex: 2 1 320px; min-width: 0; background: #1A1A1A; color: #FFFFFF; border-radius: 8px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'Roboto', sans-serif; font-size: 26px; font-weight: 700; text-transform: uppercase">At a glance</p>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 10px; height: 10px; margin-top: 8px; border-radius: 50%; background: #D71920; flex: none"></span><div><p style="margin: 0; font-weight: 600">Region</p><p style="margin: 0; color: #CCCCCC">Delhi NCR registered vehicles</p></div></div>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 10px; height: 10px; margin-top: 8px; border-radius: 50%; background: #D71920; flex: none"></span><div><p style="margin: 0; font-weight: 600">Old vehicle</p><p style="margin: 0; color: #CCCCCC">BS-IV or older truck or bus</p></div></div>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 10px; height: 10px; margin-top: 8px; border-radius: 50%; background: #D71920; flex: none"></span><div><p style="margin: 0; font-weight: 600">New vehicle</p><p style="margin: 0; color: #CCCCCC">BS-VI BharatBenz, same or lower category</p></div></div>
+<div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 10px; height: 10px; margin-top: 8px; border-radius: 50%; background: #D71920; flex: none"></span><div><p style="margin: 0; font-weight: 600">Scheme validity</p><p style="margin: 0; color: #CCCCCC">[Start date – End date]</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- Benefits -->
+<section id="benefits" style="background: #F4F4F4">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px">
+<h2 style="margin: 0 0 8px; font-family: 'Roboto', sans-serif; font-size: 40px; line-height: 1.05; font-weight: 700; text-transform: uppercase; color: #1A1A1A">Avail benefits like</h2>
+<p style="margin: 0 0 32px; color: #4A4A4A; max-width: 640px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<template data-for="benefits" data-as="b">
+<div style="background: #FFFFFF; border-radius: 8px; padding: 24px; display: flex; gap: 18px; align-items: flex-start; border-bottom: 4px solid #D71920">
+<div style="width: 56px; height: 56px; border-radius: 50%; background: #D71920; color: #FFFFFF; display: flex; align-items: center; justify-content: center; flex: none">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{b.icon}}"></path></svg>
+</div>
+<div>
+<p style="margin: 0; font-family: 'Roboto', sans-serif; font-size: 26px; line-height: 1.1; font-weight: 700; color: #1A1A1A">{{b.title}}</p>
+<p style="margin: 4px 0 0; color: #4A4A4A">{{b.text}}</p>
+</div>
+</div>
+</template>
+</div>
+</div>
+</section>
+
+<!-- Eligibility -->
+<section id="eligibility" style="background: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Roboto', sans-serif; font-size: 40px; line-height: 1.05; font-weight: 700; text-transform: uppercase; color: #1A1A1A">Who is eligible?</h2>
+<p style="margin: 0; color: #4A4A4A">Owners of BS-IV or older commercial vehicles in Delhi NCR, subject to scheme conditions.</p>
+<ul style="list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D71920" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px"><path d="M5 12l5 5 9-10"></path></svg><span>Your current vehicle is BS-IV or older</span></li>
+<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D71920" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px"><path d="M5 12l5 5 9-10"></path></svg><span>It is registered in Delhi NCR</span></li>
+<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D71920" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px"><path d="M5 12l5 5 9-10"></path></svg><span>The replacement is in the same or a lower vehicle category</span></li>
+</ul>
+</div>
+<div style="flex: 2 1 560px; min-width: 0">
+<p style="margin: 0 0 12px; font-weight: 700; color: #1A1A1A">Replace with a BharatBenz</p>
+<div role="tablist" aria-label="Vehicle category" style="display: flex; gap: 4px; border-bottom: 1px solid #DDDDDD; margin-bottom: 20px">
+<template data-for="catTabs" data-as="c">
+<button type="button" role="tab" aria-selected="{{c.isSel}}" onClick="{{c.pick}}" style="{{c.style}}">{{c.label}}</button>
+</template>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+<template data-for="ranges" data-as="r">
+<a href="#" style="border: 1px solid #DDDDDD; border-radius: 8px; padding: 20px; text-decoration: none; color: #1A1A1A; display: flex; flex-direction: column; gap: 4px; min-height: 120px; box-sizing: border-box">
+<span style="font-family: 'Roboto', sans-serif; font-size: 24px; font-weight: 700; color: #1A1A1A">{{r.name}}</span>
+<span style="color: #4A4A4A">{{r.spec}}</span>
+<span style="margin-top: auto; font-weight: 600; color: #D71920">Explore range ›</span>
+</a>
+</template>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- VIN checker -->
+<section id="check" style="background: #1A1A1A; color: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 56px 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Roboto', sans-serif; font-size: 40px; line-height: 1.05; font-weight: 700; text-transform: uppercase">Check your eligibility</h2>
+<p style="margin: 0; color: #CCCCCC">Enter the 17-character VIN of your current vehicle. You'll find it on the registration certificate (RC) and the chassis plate.</p>
+<p style="margin: 0; font-size: 14px; color: #CCCCCC">You can also verify on the official <a href="https://parivahan.parivahan.gov.in/parivartan" style="color: #FFFFFF">Parivahan Parivartan portal</a>.</p>
+</div>
+<form onSubmit="{{onCheck}}" style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<label for="vin" style="font-weight: 600; font-size: 15px">Vehicle Identification Number (VIN)</label>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<input id="vin" name="vin" type="text" maxlength="17" autocomplete="off" placeholder="e.g. MEC0123ABCD456789" value="{{vin}}" onChange="{{onVin}}" aria-describedby="vin-help" style="flex: 1 1 280px; min-width: 0; height: 54px; box-sizing: border-box; padding: 0 16px; font-size: 18px; letter-spacing: 0.08em; text-transform: uppercase; border: 0; border-radius: 4px; background: #FFFFFF; color: #1A1A1A">
+<button type="submit" style="height: 54px; padding: 0 30px; border: 0; border-radius: 4px; background: {{accent}}; color: #FFFFFF; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer">Check eligibility</button>
+</div>
+<p id="vin-help" style="margin: 0; font-size: 14px; color: #CCCCCC">{{vinCount}} / 17 characters</p>
+<template data-if="vinError">
+<p role="alert" style="margin: 0; color: #FFC9C4; font-weight: 500">Enter a valid 17-character VIN. The letters I, O and Q are not used in a VIN.</p>
+</template>
+<template data-if="showEligible">
+<div role="status" style="background: #FFFFFF; color: #1A1A1A; border-left: 0; border-radius: 6px; padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start">
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E7B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="10"></circle><path d="M8 12l3 3 5-6"></path></svg>
+<div>
+<p style="margin: 0; font-weight: 700; font-size: 18px; color: #1E7B3A">You are eligible under the scheme.</p>
+<p style="margin: 4px 0 0; color: #4A4A4A">Contact <a href="mailto:noreply_mktg@bharatbenz.com">noreply_mktg@bharatbenz.com</a> for more information.</p>
+</div>
+</div>
+</template>
+<template data-if="showNotEligible">
+<div role="status" style="background: #FFFFFF; color: #1A1A1A; border-radius: 6px; padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start">
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B3261E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="10"></circle><path d="M15 9l-6 6M9 9l6 6"></path></svg>
+<div>
+<p style="margin: 0; font-weight: 700; font-size: 18px; color: #B3261E">You are not eligible under the scheme.</p>
+<p style="margin: 4px 0 0; color: #4A4A4A">Contact <a href="mailto:noreply_mktg@bharatbenz.com">noreply_mktg@bharatbenz.com</a> for more information.</p>
+</div>
+</div>
+</template>
+</form>
+</div>
+</section>
+
+<!-- Dealer locator CTA -->
+<section id="dealers" style="background: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 56px 24px">
+<div style="background: #F4F4F4; border-left: 0; border-radius: 8px; padding: 36px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
+<div style="display: flex; gap: 20px; align-items: center; flex: 1 1 520px; min-width: 0">
+<div style="width: 64px; height: 64px; border-radius: 50%; background: #D71920; color: #FFFFFF; display: flex; align-items: center; justify-content: center; flex: none"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: 'Roboto', sans-serif; font-size: 32px; line-height: 1.1; font-weight: 700; text-transform: uppercase; color: #1A1A1A">Find a Parivartan partner dealer</h2>
+<p style="margin: 0; color: #4A4A4A">Locate a participating BharatBenz dealership near you to start your vehicle upgrade.</p>
+</div>
+</div>
+<a href="find-a-dealer.html" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 0 30px; border-radius: 4px; min-height: 54px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px; font-size: 16px; text-transform: uppercase; letter-spacing: 0.04em">Go to Dealer Locator<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</section>
+
+<!-- Scheme details -->
+<section id="details" style="background: #F4F4F4">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px">
+<h2 style="margin: 0 0 20px; font-family: 'Roboto', sans-serif; font-size: 40px; line-height: 1.05; font-weight: 700; text-transform: uppercase; color: #1A1A1A">Scheme details</h2>
+<div role="tablist" aria-label="Scheme details" style="display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid #CFCFCF">
+<template data-for="tabs" data-as="tb">
+<button type="button" role="tab" aria-selected="{{tb.isSel}}" onClick="{{tb.pick}}" style="{{tb.style}}">{{tb.label}}</button>
+</template>
+</div>
+<div role="tabpanel" style="padding: 28px 0 0">
+<template data-if="tabFin">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-family: 'Roboto', sans-serif; font-size: 24px; font-weight: 700; color: #1A1A1A">5% interest subsidy</p><p style="margin: 0; color: #4A4A4A">Up to 5 years on eligible vehicle loans. [Partner banks / NBFCs]</p></div>
+<div style="background: #FFFFFF; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-family: 'Roboto', sans-serif; font-size: 24px; font-weight: 700; color: #1A1A1A">[Financing partner 1]</p><p style="margin: 0; color: #4A4A4A">[Rate, tenure, down payment, documents]</p></div>
+<div style="background: #FFFFFF; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-family: 'Roboto', sans-serif; font-size: 24px; font-weight: 700; color: #1A1A1A">[Financing partner 2]</p><p style="margin: 0; color: #4A4A4A">[Rate, tenure, down payment, documents]</p></div>
+</div>
+</template>
+<template data-if="tabOther">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px 40px">
+<div><p style="margin: 0 0 4px; font-weight: 700; color: #1A1A1A">Scrappage / disposal</p><p style="margin: 0; color: #4A4A4A">[Registered vehicle scrapping facility process and certificate]</p></div>
+<div><p style="margin: 0 0 4px; font-weight: 700; color: #1A1A1A">Documents required</p><p style="margin: 0; color: #4A4A4A">[RC, ID proof, scrappage certificate, etc.]</p></div>
+<div><p style="margin: 0 0 4px; font-weight: 700; color: #1A1A1A">Validity</p><p style="margin: 0; color: #4A4A4A">[Scheme start and end dates]</p></div>
+<div><p style="margin: 0 0 4px; font-weight: 700; color: #1A1A1A">Terms &amp; conditions</p><p style="margin: 0"><a href="#">[Link to full T&amp;C]</a></p></div>
+</div>
+</template>
+<template data-if="tabNews">
+<ul style="list-style: none; margin: 0; padding: 0">
+<li style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 0; border-bottom: 1px solid #CFCFCF"><span style="font-weight: 700; color: #D71920; min-width: 120px">[DD Mon YYYY]</span><span>[New information / announcement about the scheme]</span></li>
+<li style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 18px 0; border-bottom: 1px solid #CFCFCF"><span style="font-weight: 700; color: #D71920; min-width: 120px">[DD Mon YYYY]</span><span>[New dealer / state added]</span></li>
+</ul>
+</template>
+</div>
+</div>
+</section>
+
+<!-- How to avail -->
+<section style="background: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px">
+<h2 style="margin: 0 0 28px; font-family: 'Roboto', sans-serif; font-size: 40px; line-height: 1.05; font-weight: 700; text-transform: uppercase; color: #1A1A1A">How to avail Parivartan benefits</h2>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+<li style="display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 4px solid #D71920"><span style="font-family: 'Roboto', sans-serif; font-size: 40px; line-height: 1; font-weight: 700; color: #D71920">01</span><span style="font-weight: 700; font-size: 18px; color: #1A1A1A">Check eligibility</span><span style="color: #4A4A4A">Verify your vehicle with its VIN.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 4px solid #D71920"><span style="font-family: 'Roboto', sans-serif; font-size: 40px; line-height: 1; font-weight: 700; color: #D71920">02</span><span style="font-weight: 700; font-size: 18px; color: #1A1A1A">Scrap or dispose</span><span style="color: #4A4A4A">Complete the old vehicle's scrappage or disposal process.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 4px solid #D71920"><span style="font-family: 'Roboto', sans-serif; font-size: 40px; line-height: 1; font-weight: 700; color: #D71920">03</span><span style="font-weight: 700; font-size: 18px; color: #1A1A1A">Choose your BharatBenz</span><span style="color: #4A4A4A">Pick a BS-VI truck or bus with a participating dealer.</span></li>
+<li style="display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 4px solid #D71920"><span style="font-family: 'Roboto', sans-serif; font-size: 40px; line-height: 1; font-weight: 700; color: #D71920">04</span><span style="font-weight: 700; font-size: 18px; color: #1A1A1A">Documents &amp; registration</span><span style="color: #4A4A4A">Complete paperwork and register your new vehicle.</span></li>
+</ol>
+</div>
+</section>
+
+<!-- Enquiry form -->
+<section id="enquire" style="background: #1A1A1A">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px; display: flex; flex-wrap: wrap; gap: 40px">
+<div style="flex: 1 1 300px; min-width: 0; color: #FFFFFF; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Roboto', sans-serif; font-size: 40px; line-height: 1.05; font-weight: 700; text-transform: uppercase">Let BharatBenz connect you with our dealers</h2>
+<p style="margin: 0; color: #CCCCCC">Share your details and a participating dealer will call you about replacing your vehicle under Parivartan.</p>
+</div>
+<div style="flex: 2 1 600px; min-width: 0">
+<template data-if="notSubmitted">
+<form onSubmit="{{onEnquire}}" style="background: #FFFFFF; border-radius: 8px; padding: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-name" style="font-weight: 600; font-size: 15px">Name *</label><input id="f-name" type="text" required="" style="height: 48px; padding: 0 14px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-email" style="font-weight: 600; font-size: 15px">Email</label><input id="f-email" type="email" style="height: 48px; padding: 0 14px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-mobile" style="font-weight: 600; font-size: 15px">Mobile number *</label><div style="display: flex; gap: 8px"><input id="f-mobile" type="tel" inputmode="numeric" required="" style="flex: 1; min-width: 0; height: 48px; padding: 0 14px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px"><button type="button" onClick="{{sendOtp}}" style="height: 48px; padding: 0 16px; border: 2px solid #D71920; background: #FFFFFF; color: #D71920; border-radius: 4px; font-weight: 700; font-size: 14px; cursor: pointer; white-space: nowrap">{{otpLabel}}</button></div></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-otp" style="font-weight: 600; font-size: 15px">OTP *</label><input id="f-otp" type="text" inputmode="numeric" maxlength="6" required="" style="height: 48px; padding: 0 14px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px"></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-state" style="font-weight: 600; font-size: 15px">State *</label><select id="f-state" required="" style="height: 48px; padding: 0 12px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px; background: #FFFFFF"><option value="">Select state</option><template data-for="activeStates" data-as="s"><option>{{s.name}}</option></template></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-district" style="font-weight: 600; font-size: 15px">District *</label><select id="f-district" required="" style="height: 48px; padding: 0 12px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px; background: #FFFFFF"><option value="">Select district</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-city" style="font-weight: 600; font-size: 15px">City *</label><select id="f-city" required="" style="height: 48px; padding: 0 12px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px; background: #FFFFFF"><option value="">Select city</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-dealer" style="font-weight: 600; font-size: 15px">Dealership name</label><select id="f-dealer" style="height: 48px; padding: 0 12px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px; background: #FFFFFF"><option value="">Select dealer</option><option>Dhingra Trucking</option><option>[Dealers filtered by city]</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-cat" style="font-weight: 600; font-size: 15px">Select category *</label><select id="f-cat" required="" style="height: 48px; padding: 0 12px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px; background: #FFFFFF"><option value="">Select category</option><option>MDT (10–19 tonnes)</option><option>HDT (19–55 tonnes)</option><option>Bus</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="f-ton" style="font-weight: 600; font-size: 15px">Preferred tonnage *</label><select id="f-ton" required="" style="height: 48px; padding: 0 12px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px; background: #FFFFFF"><option value="">Select tonnage</option><option>[Filtered by category]</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px; grid-column: 1 / -1"><label for="f-vin" style="font-weight: 600; font-size: 15px">VIN / chassis number of current vehicle (optional)</label><input id="f-vin" type="text" maxlength="17" value="{{vin}}" onChange="{{onVin}}" style="height: 48px; padding: 0 14px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px; text-transform: uppercase"></div>
+<label style="grid-column: 1 / -1; display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #4A4A4A"><input type="checkbox" required="" style="width: 20px; height: 20px; margin: 2px 0 0; flex: none">I agree to be contacted by BharatBenz and its dealers about the Parivartan scheme, and accept the <a href="#">Privacy Policy</a>.</label>
+<div style="grid-column: 1 / -1"><button type="submit" style="height: 54px; padding: 0 40px; border: 0; border-radius: 4px; background: {{accent}}; color: #FFFFFF; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer">Submit details</button></div>
+</form>
+</template>
+<template data-if="submitted">
+<div role="status" style="background: #FFFFFF; border-radius: 8px; padding: 40px; display: flex; flex-direction: column; gap: 10px; border-top: 5px solid #D71920">
+<p style="margin: 0; font-family: 'Roboto', sans-serif; font-size: 32px; font-weight: 700; text-transform: uppercase; color: #1A1A1A">Thank you!</p>
+<p style="margin: 0; color: #4A4A4A">A participating dealer will contact you within [X working days].</p>
+<button type="button" onClick="{{resetEnquiry}}" style="align-self: flex-start; margin-top: 8px; height: 44px; padding: 0 20px; border: 2px solid #D71920; background: transparent; color: #D71920; border-radius: 4px; font-weight: 700; cursor: pointer">Submit another enquiry</button>
+</div>
+</template>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background: #FFFFFF">
+<div style="max-width: 920px; margin: 0 auto; padding: 64px 24px">
+<h2 style="margin: 0 0 24px; font-family: 'Roboto', sans-serif; font-size: 40px; line-height: 1.05; font-weight: 700; text-transform: uppercase; color: #1A1A1A">Frequently asked questions</h2>
+<div style="border-top: 1px solid #DDDDDD">
+<template data-for="faqs" data-as="f">
+<details style="border-bottom: 1px solid #DDDDDD">
+<summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; min-height: 44px; font-weight: 600; font-size: 17px; color: #1A1A1A"><span>{{f.q}}</span><span aria-hidden="true" style="font-size: 24px; color: #D71920; flex: none">+</span></summary>
+<p style="margin: 0 0 18px; color: #4A4A4A">{{f.a}}</p>
+</details>
+</template>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="background: #000000; color: #A3A6A9; font-size: 14px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 32px; display: flex; flex-wrap: wrap; gap: 40px">
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border-radius: 6px; padding: 10px 14px; align-self: flex-start"><img src="assets/bharatbenz-logo.png" alt="BharatBenz" style="display: block; height: 56px; width: auto"></div>
+<span>Daimler India Commercial Vehicles Pvt. Ltd.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="#" style="color: #FFFFFF; text-decoration: none; border: 1px solid #4A4D50; border-radius: 999px; padding: 6px 12px; font-size: 13px">Facebook</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none; border: 1px solid #4A4D50; border-radius: 999px; padding: 6px 12px; font-size: 13px">Instagram</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none; border: 1px solid #4A4D50; border-radius: 999px; padding: 6px 12px; font-size: 13px">Twitter</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none; border: 1px solid #4A4D50; border-radius: 999px; padding: 6px 12px; font-size: 13px">YouTube</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none; border: 1px solid #4A4D50; border-radius: 999px; padding: 6px 12px; font-size: 13px">LinkedIn</a>
+</div>
+</div>
+<nav aria-label="Quick links" style="flex: 3 1 600px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; color: #FFFFFF; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px">Quick Links</p>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Trucks</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Buses</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">About us</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Careers</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">BS-VI</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; color: #FFFFFF; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px">Services</p>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Service Workshops</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Genuine Parts</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Rakshana</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Share your Feedback</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; color: #FFFFFF; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px">Dealers</p>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Find a Dealer</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Authorized Dealers</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Select My Truck</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Testimonials</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; color: #FFFFFF; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px">Media</p>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Newsroom</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Blog</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Contact us</a>
+</div>
+</nav>
+</div>
+<div style="border-top: 1px solid #2A2C2E">
+<div style="max-width: 1240px; margin: 0 auto; padding: 18px 24px 96px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; font-size: 13px">
+<span>© [Year] Daimler India Commercial Vehicles Pvt. Ltd.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<a href="#" style="color: #C9CCCF; text-decoration: none">Daimler Trucks</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Privacy Policy</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Legal Disclaimer</a>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Floating action bar -->
+<div style="position: sticky; bottom: 16px; z-index: 5; display: flex; justify-content: center; padding: 0 16px; margin-top: -72px; pointer-events: none">
+<div style="pointer-events: auto; display: flex; flex-wrap: wrap; gap: 4px; background: #FFFFFF; border-radius: 999px; padding: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.25)">
+<a href="tel:+910000000000" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; color: #1A1A1A; font-weight: 700; text-decoration: none"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>Call now</a>
+<a href="find-a-dealer.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; color: #1A1A1A; font-weight: 700; text-decoration: none"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Locate a dealer</a>
+<a href="#enquire" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 999px; background: {{accent}}; color: #FFFFFF; font-weight: 700; text-decoration: none">Enquire now</a>
+</div>
+</div>
+
+</div>
+</template>
+<script>
+(function () {
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g, WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+  var BOOL = { disabled: 1, checked: 1, selected: 1, required: 1, hidden: 1, open: 1 };
+  function look(scope, path) {
+    if (path === 'true') return true; if (path === 'false') return false;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split('.'), v = scope[parts[0]];
+    for (var i = 1; i < parts.length && v != null; i++) v = v[parts[i]];
+    return v;
+  }
+  function str(v) { return v == null ? '' : String(v); }
+  function fill(text, scope) { return text.replace(HOLE, function (_, p) { return str(look(scope, p)); }); }
+  function kids(node) { return node.content ? node.content.childNodes : node.childNodes; }
+  function renderAll(nodes, scope, out) { for (var i = 0; i < nodes.length; i++) render(nodes[i], scope, out); }
+  function render(node, scope, out) {
+    if (node.nodeType === 3) { out.appendChild(document.createTextNode(fill(node.data, scope))); return; }
+    if (node.nodeType !== 1) return;
+    if (node.localName === 'template' && node.hasAttribute('data-for')) {
+      var list = look(scope, node.getAttribute('data-for')) || [], as = node.getAttribute('data-as');
+      for (var i = 0; i < list.length; i++) { var sc = Object.create(scope); sc[as] = list[i]; sc.$index = i; renderAll(kids(node), sc, out); }
+      return;
+    }
+    if (node.localName === 'template' && node.hasAttribute('data-if')) {
+      if (look(scope, node.getAttribute('data-if'))) renderAll(kids(node), scope, out);
+      return;
+    }
+    var el = document.createElementNS(node.namespaceURI, node.localName), valueProp;
+    for (var a = 0; a < node.attributes.length; a++) {
+      var at = node.attributes[a], name = at.name, val = at.value, w = WHOLE.exec(val);
+      if (name.slice(0, 2) === 'on' && w) {
+        var fn = look(scope, w[1]), ev = name.slice(2);
+        if (ev === 'change') ev = 'input';
+        if (typeof fn === 'function') el.addEventListener(ev, fn);
+        continue;
+      }
+      if (w) {
+        var v = look(scope, w[1]);
+        if (name === 'value') { valueProp = str(v); continue; }
+        if (BOOL[name]) { if (v) el.setAttribute(name, ''); if (name === 'checked') el.checked = !!v; continue; }
+        if (v === false || v == null) { if (name.slice(0, 5) === 'aria-') el.setAttribute(name, 'false'); continue; }
+        el.setAttribute(name, str(v));
+        continue;
+      }
+      el.setAttribute(name, val.indexOf('{{') >= 0 ? fill(val, scope) : val);
+    }
+    renderAll(kids(node), scope, el);
+    if (valueProp !== undefined) { el.value = valueProp; el.setAttribute('value', valueProp); }
+    out.appendChild(el);
+  }
+  window.DCLogic = function DCLogic(props) { this.props = props; this.state = {}; };
+  DCLogic.prototype.setState = function (patch) {
+    if (typeof patch === 'function') patch = patch(this.state, this.props);
+    var changed = false;
+    for (var k in patch) if (this.state[k] !== patch[k]) { changed = true; break; }
+    this.state = Object.assign({}, this.state, patch);
+    if (changed && this.__render) this.__render();
+  };
+  DCLogic.prototype.forceUpdate = function () { if (this.__render) this.__render(); };
+  window.mountDC = function (Component, props) {
+    var tpl = document.getElementById('dc'), root = document.getElementById('app');
+    var comp = new Component(props);
+    comp.__render = function () {
+      var act = document.activeElement, id = act && act.id, s0 = null, s1 = null;
+      try { s0 = act.selectionStart; s1 = act.selectionEnd; } catch (e) {}
+      var open = []; root.querySelectorAll('details').forEach(function (d, i) { if (d.open) open.push(i); });
+      var frag = document.createDocumentFragment();
+      renderAll(tpl.content.childNodes, comp.renderVals(), frag);
+      root.replaceChildren(frag);
+      var ds = root.querySelectorAll('details'); open.forEach(function (i) { if (ds[i]) ds[i].open = true; });
+      if (id) { var n = document.getElementById(id); if (n) { n.focus(); try { if (s0 != null) n.setSelectionRange(s0, s1); } catch (e) {} } }
+    };
+    comp.__render();
+  };
+})();
+</script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { lang: 'en', vin: '', vinError: false, result: null, hover: null, sel: 'HR', dealer: 'HR0', tab: 'fin', cat: 'trucks', submitted: false, otp: false, menu: null, dEligible: true, dState: 'all', dType: 'all' };
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#D71920';
+    const navy = '#D71920';
+    const s = this.state;
+    const T = [
+      ['JK','Jammu & Kashmir',4,1],['LA','Ladakh',5,1],
+      ['PB','Punjab',4,2],['HP','Himachal Pradesh',5,2],
+      ['HR','Haryana',4,3],['UK','Uttarakhand',5,3],['SK','Sikkim',7,3],['AR','Arunachal Pradesh',9,3],
+      ['RJ','Rajasthan',3,4],['DL','Delhi',4,4],['UP','Uttar Pradesh',5,4],['BR','Bihar',6,4],['AS','Assam',8,4],['NL','Nagaland',9,4],
+      ['GJ','Gujarat',2,5],['MP','Madhya Pradesh',4,5],['JH','Jharkhand',6,5],['WB','West Bengal',7,5],['ML','Meghalaya',8,5],['MN','Manipur',9,5],
+      ['MH','Maharashtra',3,6],['CG','Chhattisgarh',5,6],['OD','Odisha',6,6],['TR','Tripura',8,6],['MZ','Mizoram',9,6],
+      ['GA','Goa',2,7],['TS','Telangana',4,7],['AP','Andhra Pradesh',5,7],
+      ['KA','Karnataka',3,8],['KL','Kerala',3,9],['TN','Tamil Nadu',4,9]
+    ];
+    const ph = { name: '[Dealer name]', city: '[City]', spoc: '[SPOC name]', mobile: '[+91 XXXXX XXXXX]', tel: 'tel:+910000000000' };
+    const D = {
+      HR: [{ name: 'Dhingra Trucking', city: '[City]', spoc: 'Narendra Singh', mobile: '80592 26666', tel: 'tel:+918059226666' }, ph],
+      DL: [ph, ph], UP: [ph, ph], RJ: [ph]
+    };
+    const focus = s.hover || s.sel;
+    const tiles = T.map(([code, name, col, row]) => {
+      const active = !!D[code];
+      const isFocus = active && focus === code;
+      const dimmed = active && s.hover && s.hover !== code;
+      let bg = '#E8E8E8', fg = '#5E5E5E', border = '1px solid #CFCFCF';
+      if (active) { bg = dimmed ? '#F6D3D5' : navy; fg = dimmed ? '#7A0E13' : '#FFFFFF'; border = '0'; }
+      if (isFocus) { bg = '#9E1016'; fg = '#FFFFFF'; }
+      const ring = isFocus ? '0 0 0 3px #FFFFFF, 0 0 0 5px #9E1016' : 'none';
+      return {
+        code, name,
+        label: name + (active ? ' — participating' : ' — not active'),
+        disabled: !active, isSel: s.sel === code, blip: isFocus,
+        style: `grid-column: ${col}; grid-row: ${row}; position: relative; width: 52px; height: 52px; box-sizing: border-box; border: ${border}; border-radius: 6px; background: ${bg}; color: ${fg}; box-shadow: ${ring}; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; cursor: ${active ? 'pointer' : 'default'}; transition: background 120ms`,
+        enter: () => { if (active) this.setState({ hover: code }); },
+        pick: () => { if (active) this.setState({ sel: code, hover: null, dealer: null }); }
+      };
+    });
+    const nameOf = (c) => (T.find((t) => t[0] === c) || [c, c])[1];
+    const dealers = (D[focus] || []).map((d, i) => {
+      const id = focus + i;
+      const isSel = s.dealer === id;
+      return {
+        ...d, isSel,
+        style: `width: 100%; min-height: 56px; display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 6px; border: 1px solid ${isSel ? navy : '#DDDDDD'}; background: ${isSel ? navy : '#FFFFFF'}; color: ${isSel ? '#FFFFFF' : '#1A1A1A'}; font-size: 16px; cursor: pointer`,
+        pick: () => this.setState({ dealer: id, sel: focus, hover: null })
+      };
+    });
+    const dealer = dealers.find((d) => d.isSel) || null;
+    const tabStyle = (on) => `min-height: 48px; padding: 0 20px; border: 0; background: transparent; font-size: 16px; font-weight: 700; cursor: pointer; color: ${on ? navy : '#5E5E5E'}; border-bottom: 3px solid ${on ? '#D71920' : 'transparent'}; margin-bottom: -1px`;
+    const tabs = [['fin','Financing options'],['other','Other details of the scheme'],['news','Latest updates']].map(([id, label]) => ({
+      label, isSel: s.tab === id, style: tabStyle(s.tab === id), pick: () => this.setState({ tab: id })
+    }));
+    const catTabs = [['trucks','Trucks'],['buses','Buses']].map(([id, label]) => ({
+      label, isSel: s.cat === id, style: tabStyle(s.cat === id), pick: () => this.setState({ cat: id })
+    }));
+    const ranges = s.cat === 'trucks'
+      ? [{ name: 'MDT', spec: '10–19 tonnes' }, { name: 'HDT (C)', spec: '19–35 tonnes' }, { name: 'HDT (R) / (RT)', spec: '28–48 tonnes' }, { name: 'HDT (T)', spec: '40–55 tonnes' }]
+      : [{ name: 'School Bus', spec: '[Seating range]' }, { name: 'Staff Bus', spec: '[Seating range]' }, { name: 'Medium Duty Bus Chassis', spec: '[GVW range]' }, { name: 'Heavy Duty Bus Chassis', spec: '[GVW range]' }];
+    const I = {
+      pct: 'M19 5L5 19M7.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM16.5 18a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z',
+      tax: 'M6 2h9l5 5v15H6zM14 2v6h6M9 13h6M9 17h6',
+      fuel: 'M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M3 21h12M6 9h6M14 10h2a2 2 0 0 1 2 2v4a1.5 1.5 0 0 0 3 0V8l-3-3',
+      reg: 'M9 3h6v3H9zM6 5H5v16h14V5h-1M9 13l2 2 4-4',
+      hand: 'M2 12l4-4 4 2 4-2 4 2 4-2M6 14l4 4 2-1 2 1 4-4',
+      truck: 'M2 7h11v9H2zM13 10h4l4 3v3h-8zM6.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM17.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'
+    };
+    const benefits = [
+      { icon: I.pct, title: 'Lorem ipsum dolor', text: 'Consectetur adipiscing elit, sed do eiusmod tempor.' },
+      { icon: I.tax, title: 'Lorem ipsum dolor', text: 'Consectetur adipiscing elit, sed do eiusmod tempor.' },
+      { icon: I.fuel, title: 'Lorem ipsum dolor', text: 'Consectetur adipiscing elit, sed do eiusmod tempor.' },
+      { icon: I.reg, title: 'Lorem ipsum dolor', text: 'Consectetur adipiscing elit, sed do eiusmod tempor.' },
+      { icon: I.hand, title: 'Lorem ipsum dolor', text: 'Consectetur adipiscing elit, sed do eiusmod tempor.' },
+      { icon: I.truck, title: 'Lorem ipsum dolor', text: 'Consectetur adipiscing elit, sed do eiusmod tempor.' }
+    ];
+    const faqs = [
+      { q: 'What is the Parivartan Scheme?', a: 'A Government of India initiative to replace eligible older commercial vehicles in Delhi NCR with cleaner BS-VI vehicles, with tax, registration and financing benefits.' },
+      { q: 'Which BharatBenz vehicles can I choose?', a: 'BS-VI BharatBenz trucks (MDT and HDT ranges) and buses in the same or a lower category than your old vehicle. [Confirm eligible models]' },
+      { q: 'Can I replace my old truck?', a: '[Answer]' },
+      { q: 'Can I replace my old bus?', a: '[Answer]' },
+      { q: 'What benefits are available?', a: '5% interest subsidy up to 5 years, 100% motor vehicle tax exemption, registration fee exemption, additional fuel incentives and OEM benefits of at least 8%.' },
+      { q: 'How do I check my eligibility?', a: 'Enter your VIN in the eligibility checker on this page, or verify on the official Parivahan Parivartan portal.' },
+      { q: 'Which documents do I need?', a: '[Answer]' },
+      { q: 'How do I choose the right BharatBenz for my business?', a: '[Answer — link to Select My Truck]' }
+    ];
+    const NAV = [
+      ['Trucks', ['MDT (10-19 tonnes)', 'HDT (R) (28-48 tonnes)', 'HDT (RT) (28-48 tonnes)', 'HDT (C) (19-35 tonnes)', 'HDT (T) (40-55 tonnes)']],
+      ['Buses', ['School Bus', 'Staff Bus', 'Medium Duty Bus Chassis', 'Heavy Duty Bus Chassis']],
+      ['Parts and Services', ['Rakshana', 'Truckonnect', 'Genuine Parts', 'Share your Feedback']],
+      ['Pre-Owned Trucks', []],
+      ['Dealership', []],
+      ['Customers', ['Testimonials', 'Kilometer Millionaire', 'Important Information for Customers']]
+    ];
+    const navItems = NAV.map(([label, subs]) => {
+      const isOpen = s.menu === label && subs.length > 0;
+      return {
+        label, hasSub: subs.length > 0, isOpen, showMenu: isOpen,
+        items: subs.map((x) => ({ label: x })),
+        style: `display: inline-flex; align-items: center; gap: 4px; min-height: 44px; padding: 0; border: 0; background: transparent; font-size: 15px; font-weight: 600; cursor: pointer; color: ${isOpen ? '#D71920' : '#1A1A1A'}`,
+        open: () => this.setState({ menu: label }),
+        toggle: () => this.setState({ menu: s.menu === label ? null : label })
+      };
+    });
+    const PHN = '[+91 XXXXX XXXXX]';
+    const DIR = [
+      { name: 'Dhingra Trucking', type: '3S', address: '[Address]', city: '[City]', state: 'Haryana', phone: '80592 26666', tel: 'tel:+918059226666', eligible: true },
+      { name: 'Espirit Trucking', type: '3S', address: 'NH58, Morta village', city: 'Ghaziabad', state: 'Uttar Pradesh', phone: PHN, tel: '#', eligible: true },
+      { name: '[Dealer name]', type: '3S', address: '[Address]', city: '[City]', state: 'Delhi', phone: PHN, tel: '#', eligible: true },
+      { name: '[Dealer name]', type: '3S', address: '[Address]', city: 'Jind', state: 'Haryana', phone: PHN, tel: '#', eligible: true },
+      { name: '[Dealer name]', type: 'Service', address: '[Address]', city: '[City]', state: 'Rajasthan', phone: PHN, tel: '#', eligible: true },
+      { name: '[Dealer name]', type: '3S', address: '[Address]', city: 'Moradabad', state: 'Uttar Pradesh', phone: PHN, tel: '#', eligible: false },
+      { name: '[Dealer name]', type: '3S', address: '[Address]', city: 'Safidon', state: 'Haryana', phone: PHN, tel: '#', eligible: false }
+    ];
+    const typeLabels = { '3S': 'Sales, Service & Spares (3S)', Service: 'Service only' };
+    const dirDealers = DIR.filter((d) => (!s.dEligible || d.eligible) && (s.dState === 'all' || d.state === s.dState) && (s.dType === 'all' || d.type === s.dType))
+      .map((d) => ({ ...d, typeLabel: typeLabels[d.type] }));
+    const seg = (on) => `min-height: 44px; padding: 0 18px; border: 0; border-radius: 4px; cursor: pointer; font-size: 15px; font-weight: 700; background: ${on ? '#D71920' : 'transparent'}; color: ${on ? '#FFFFFF' : '#1A1A1A'}`;
+    const pill = (on) => `min-height: 28px; padding: 2px 12px; border: 0; cursor: pointer; font-size: 13px; font-weight: 600; background: ${on ? '#FFFFFF' : 'transparent'}; color: ${on ? '#111111' : '#C9CCCF'}`;
+    const res = s.result;
+    return {
+      accent,
+      isEn: s.lang === 'en', isHi: s.lang === 'hi',
+      enStyle: pill(s.lang === 'en'), hiStyle: pill(s.lang === 'hi'),
+      setEn: () => this.setState({ lang: 'en' }), setHi: () => this.setState({ lang: 'hi' }),
+      benefits, catTabs, ranges, faqs,
+      vin: s.vin, vinCount: s.vin.length, vinError: s.vinError,
+      showEligible: res === 'eligible', showNotEligible: res === 'not eligible',
+      onVin: (e) => this.setState({ vin: e.target.value.toUpperCase().replace(/\s/g, '').slice(0, 17), vinError: false, result: null }),
+      onCheck: (e) => {
+        e.preventDefault();
+        const ok = /^[A-HJ-NPR-Z0-9]{17}$/.test(s.vin);
+        this.setState(ok ? { vinError: false, result: this.props.vinResult ?? 'eligible' } : { vinError: true, result: null });
+      },
+      tiles,
+      clearHover: () => this.setState({ hover: null }),
+      focusName: nameOf(focus),
+      dealers, dealer: dealer || { name: '', city: '', spoc: '', mobile: '', tel: '#' },
+      hasDealer: !!dealer, noDealer: !dealer,
+      closeDealer: () => this.setState({ dealer: null }),
+      tabs, tabFin: s.tab === 'fin', tabOther: s.tab === 'other', tabNews: s.tab === 'news',
+      activeStates: Object.keys(D).map((c) => ({ name: nameOf(c) })),
+      otpLabel: s.otp ? 'Resend OTP' : 'Send OTP',
+      sendOtp: () => this.setState({ otp: true }),
+      notSubmitted: !s.submitted, submitted: s.submitted,
+      onEnquire: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
+      resetEnquiry: () => this.setState({ submitted: false }),
+      navItems, closeMenu: () => this.setState({ menu: null }),
+      dirDealers, dCount: dirDealers.length, dNone: dirDealers.length === 0,
+      dEligibleOnly: s.dEligible, dAllOn: !s.dEligible,
+      dElStyle: seg(s.dEligible), dAllStyle: seg(!s.dEligible),
+      dShowEligible: () => this.setState({ dEligible: true }),
+      dShowAll: () => this.setState({ dEligible: false }),
+      dState: s.dState, dType: s.dType,
+      dStates: [...new Set(DIR.map((d) => d.state))].sort().map((name) => ({ name })),
+      onDState: (e) => this.setState({ dState: e.target.value }),
+      onDType: (e) => this.setState({ dType: e.target.value })
+    };
+  }
+}
+mountDC(Component, {"accent": "#D71920", "vinResult": "eligible"});
+</script>
+</body>
+</html>

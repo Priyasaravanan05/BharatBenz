@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find a Dealer — BharatBenz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Noto+Sans+Devanagari:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#D71920}a:hover{color:#1A1A1A}
+input,select,button{font-family:inherit}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="dc">
+<div style="font-family: 'Roboto', 'Noto Sans Devanagari', system-ui, sans-serif; color: #1A1A1A; background: #FFFFFF; font-size: 16px; line-height: 1.55; position: relative">
+
+<!-- Utility bar -->
+<div style="background: #000000; color: #C9CCCF; font-size: 13px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 8px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 20px">
+<span>Customer Toll Free No. : <a href="tel:180030012345" style="color: #FFFFFF; text-decoration: none; font-weight: 600">1800 300 12345</a></span>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px">
+<a href="#" style="color: #C9CCCF; text-decoration: none">Newsroom</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Image Gallery</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Blog</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">About us</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Contact us</a>
+<div role="group" aria-label="Language" style="display: flex; border: 1px solid #4A4D50; border-radius: 4px; overflow: hidden">
+<button type="button" onClick="{{setHi}}" aria-pressed="{{isHi}}" style="{{hiStyle}}">हिंदी</button>
+<button type="button" onClick="{{setEn}}" aria-pressed="{{isEn}}" style="{{enStyle}}">EN</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Header -->
+<header style="background: #FFFFFF; border-bottom: 1px solid #DDDDDD; position: relative; z-index: 20">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+<a href="index.html" aria-label="BharatBenz home" style="display: flex; align-items: center; text-decoration: none">
+<img src="assets/bharatbenz-logo.png" alt="BharatBenz" style="display: block; height: 60px; width: auto">
+</a>
+<nav aria-label="Main" onMouseLeave="{{closeMenu}}" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; flex: 1 1 480px; justify-content: flex-end; font-size: 15px; font-weight: 600">
+<template data-for="navItems" data-as="n">
+<div style="position: relative">
+<button type="button" onMouseEnter="{{n.open}}" onClick="{{n.toggle}}" aria-expanded="{{n.isOpen}}" style="{{n.style}}">{{n.label}}<template data-if="n.hasSub"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></template></button>
+<template data-if="n.showMenu">
+<div style="position: absolute; top: 100%; left: -12px; z-index: 30; min-width: 250px; background: #FFFFFF; border-top: 3px solid #D71920; border-radius: 0 0 6px 6px; box-shadow: 0 12px 28px rgba(0,0,0,0.18); padding: 8px 0; display: flex; flex-direction: column">
+<template data-for="n.items" data-as="i">
+<a href="#" style="display: block; padding: 10px 18px; color: #1A1A1A; text-decoration: none; font-weight: 500">{{i.label}}</a>
+</template>
+</div>
+</template>
+</div>
+</template>
+</nav>
+<a href="#" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 4px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Enquire Now</a>
+</div>
+</header>
+
+<!-- Page title -->
+<section style="background: #1A1A1A; color: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 40px">
+<p style="margin: 0 0 28px; font-size: 14px; color: #A3A6A9"><a href="index.html" style="color: #A3A6A9; text-decoration: none">Home</a> › Dealership › <span style="color: #FFFFFF; font-weight: 600">Find a Dealer</span></p>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 640px">
+<h1 style="margin: 0; font-size: 48px; line-height: 1.05; font-weight: 700">Find a Dealer</h1>
+<p style="margin: 0; color: #CCCCCC">Looking for a BharatBenz commercial vehicle dealership near you?</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="#" style="min-height: 44px; padding: 0 20px; display: inline-flex; align-items: center; border-radius: 4px; background: {{accent}}; color: #FFFFFF; font-weight: 700; text-decoration: none">Dealer Locator</a>
+<a href="#" style="min-height: 44px; padding: 0 20px; display: inline-flex; align-items: center; border-radius: 4px; border: 2px solid #FFFFFF; color: #FFFFFF; font-weight: 700; text-decoration: none">Become a Dealer</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Locator -->
+<section style="background: #F4F4F4">
+<div style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 72px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+
+<!-- Filters -->
+<aside aria-label="Filters" style="flex: 1 1 280px; max-width: 100%; display: flex; flex-direction: column; gap: 16px">
+
+<div style="background: #FFFFFF; border-radius: 8px; border-top: 4px solid #D71920; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="background: #D71920; color: #FFFFFF; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 8px; border-radius: 3px">New</span>
+<p style="margin: 0; font-weight: 700; font-size: 17px">Parivartan scheme</p>
+</div>
+<p style="margin: 0; font-size: 14px; color: #4A4A4A">Replacing a BS-IV or older vehicle? Show dealers who can process Parivartan benefits.</p>
+<div role="group" aria-label="Dealer filter" style="display: flex; flex-wrap: wrap; background: #F4F4F4; border-radius: 6px; padding: 4px; gap: 4px">
+<button type="button" onClick="{{dShowEligible}}" aria-pressed="{{dEligibleOnly}}" style="{{dElStyle}}">Parivartan eligible partners</button>
+<button type="button" onClick="{{dShowAll}}" aria-pressed="{{dAllOn}}" style="{{dAllStyle}}">All dealers</button>
+</div>
+<a href="index.html" style="font-size: 14px; font-weight: 600">About the Parivartan scheme ›</a>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="d-state" style="font-weight: 600; font-size: 14px">State</label><select id="d-state" value="{{dState}}" onChange="{{onDState}}" style="height: 48px; padding: 0 12px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px; background: #FFFFFF"><option value="all">All states</option><template data-for="dStates" data-as="o"><option value="{{o.name}}">{{o.name}}</option></template></select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="d-city" style="font-weight: 600; font-size: 14px">City</label><select id="d-city" value="{{dCity}}" onChange="{{onDCity}}" style="height: 48px; padding: 0 12px; border: 1px solid #8C8C8C; border-radius: 4px; font-size: 16px; background: #FFFFFF"><option value="all">All cities</option><template data-for="dCities" data-as="o"><option value="{{o.name}}">{{o.name}}</option></template></select></div>
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px">
+<legend style="font-weight: 700; font-size: 15px; margin-bottom: 6px; padding: 0">Filter On Available Services</legend>
+<template data-for="svcs" data-as="v">
+<label style="display: flex; align-items: center; gap: 10px; min-height: 40px; cursor: pointer"><input type="checkbox" checked="{{v.on}}" onChange="{{v.toggle}}" style="width: 20px; height: 20px; margin: 0; accent-color: #D71920">{{v.label}}</label>
+</template>
+</fieldset>
+<div style="display: flex; gap: 10px">
+<button type="button" style="flex: 1; min-height: 48px; border: 0; border-radius: 4px; background: {{accent}}; color: #FFFFFF; font-size: 16px; font-weight: 700; cursor: pointer">Find</button>
+<button type="button" onClick="{{clearAll}}" style="flex: 1; min-height: 48px; border: 2px solid #1A1A1A; border-radius: 4px; background: #FFFFFF; color: #1A1A1A; font-size: 15px; font-weight: 700; cursor: pointer">Clear History</button>
+</div>
+</div>
+</aside>
+
+<!-- Results -->
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px">
+<p style="margin: 0; font-size: 16px; color: #4A4A4A"><strong style="color: #1A1A1A; font-size: 20px">{{dCount}}</strong> {{dCountLabel}}</p>
+<template data-if="dEligibleOnly">
+<span style="display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #D71920; color: #B5121B; border-radius: 999px; padding: 4px 6px 4px 14px; font-size: 14px; font-weight: 600">Parivartan eligible<button type="button" onClick="{{dShowAll}}" aria-label="Remove Parivartan filter" style="width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; color: #B5121B; cursor: pointer; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span>
+</template>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px">
+<template data-for="dirDealers" data-as="d">
+<article style="background: #FFFFFF; border-radius: 8px; border: 1px solid #DDDDDD; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px">
+<h2 style="margin: 0; font-size: 19px; line-height: 1.3; font-weight: 700">{{d.name}}</h2>
+<template data-if="d.eligible">
+<span style="flex: none; background: #D71920; color: #FFFFFF; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 8px; border-radius: 3px">Parivartan partner</span>
+</template>
+</div>
+<p style="margin: 0; display: flex; gap: 8px; color: #4A4A4A; font-size: 15px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D71920" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><span>{{d.address}}</span></p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 4px">
+<a href="#" style="flex: 1 1 140px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; background: {{accent}}; color: #FFFFFF; border-radius: 4px; font-weight: 700; text-decoration: none">View More Details</a>
+<a href="#" style="flex: 1 1 120px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 2px solid #D71920; color: #D71920; border-radius: 4px; font-weight: 700; text-decoration: none"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"></path></svg>Get Direction</a>
+</div>
+</article>
+</template>
+</div>
+<template data-if="dNone">
+<p style="margin: 0; padding: 40px; background: #FFFFFF; border-radius: 8px; text-align: center; color: #4A4A4A">No dealers match these filters. Try another state or city, or show all dealers.</p>
+</template>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="background: #000000; color: #A3A6A9; font-size: 14px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 32px; display: flex; flex-wrap: wrap; gap: 40px">
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border-radius: 6px; padding: 10px 14px; align-self: flex-start"><img src="assets/bharatbenz-logo.png" alt="BharatBenz" style="display: block; height: 56px; width: auto"></div>
+<span>Daimler India Commercial Vehicles Pvt. Ltd.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="#" style="color: #FFFFFF; text-decoration: none; border: 1px solid #4A4D50; border-radius: 999px; padding: 6px 12px; font-size: 13px">Facebook</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none; border: 1px solid #4A4D50; border-radius: 999px; padding: 6px 12px; font-size: 13px">Instagram</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none; border: 1px solid #4A4D50; border-radius: 999px; padding: 6px 12px; font-size: 13px">Twitter</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none; border: 1px solid #4A4D50; border-radius: 999px; padding: 6px 12px; font-size: 13px">YouTube</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none; border: 1px solid #4A4D50; border-radius: 999px; padding: 6px 12px; font-size: 13px">LinkedIn</a>
+</div>
+</div>
+<nav aria-label="Quick links" style="flex: 3 1 600px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; color: #FFFFFF; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px">Quick Links</p>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Trucks</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Buses</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">About us</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Careers</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">BS-VI</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; color: #FFFFFF; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px">Services</p>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Service Workshops</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Genuine Parts</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Rakshana</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Share your Feedback</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; color: #FFFFFF; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px">Dealers</p>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Find a Dealer</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Authorized Dealers</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Select My Truck</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Testimonials</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 4px; color: #FFFFFF; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px">Media</p>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Newsroom</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Blog</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Contact us</a>
+</div>
+</nav>
+</div>
+<div style="border-top: 1px solid #2A2C2E">
+<div style="max-width: 1240px; margin: 0 auto; padding: 18px 24px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; font-size: 13px">
+<span>© [Year] Daimler India Commercial Vehicles Pvt. Ltd.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<a href="#" style="color: #C9CCCF; text-decoration: none">Daimler Trucks</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Privacy Policy</a>
+<a href="#" style="color: #C9CCCF; text-decoration: none">Legal Disclaimer</a>
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+</template>
+<script>
+(function () {
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g, WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+  var BOOL = { disabled: 1, checked: 1, selected: 1, required: 1, hidden: 1, open: 1 };
+  function look(scope, path) {
+    if (path === 'true') return true; if (path === 'false') return false;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split('.'), v = scope[parts[0]];
+    for (var i = 1; i < parts.length && v != null; i++) v = v[parts[i]];
+    return v;
+  }
+  function str(v) { return v == null ? '' : String(v); }
+  function fill(text, scope) { return text.replace(HOLE, function (_, p) { return str(look(scope, p)); }); }
+  function kids(node) { return node.content ? node.content.childNodes : node.childNodes; }
+  function renderAll(nodes, scope, out) { for (var i = 0; i < nodes.length; i++) render(nodes[i], scope, out); }
+  function render(node, scope, out) {
+    if (node.nodeType === 3) { out.appendChild(document.createTextNode(fill(node.data, scope))); return; }
+    if (node.nodeType !== 1) return;
+    if (node.localName === 'template' && node.hasAttribute('data-for')) {
+      var list = look(scope, node.getAttribute('data-for')) || [], as = node.getAttribute('data-as');
+      for (var i = 0; i < list.length; i++) { var sc = Object.create(scope); sc[as] = list[i]; sc.$index = i; renderAll(kids(node), sc, out); }
+      return;
+    }
+    if (node.localName === 'template' && node.hasAttribute('data-if')) {
+      if (look(scope, node.getAttribute('data-if'))) renderAll(kids(node), scope, out);
+      return;
+    }
+    var el = document.createElementNS(node.namespaceURI, node.localName), valueProp;
+    for (var a = 0; a < node.attributes.length; a++) {
+      var at = node.attributes[a], name = at.name, val = at.value, w = WHOLE.exec(val);
+      if (name.slice(0, 2) === 'on' && w) {
+        var fn = look(scope, w[1]), ev = name.slice(2);
+        if (ev === 'change') ev = 'input';
+        if (typeof fn === 'function') el.addEventListener(ev, fn);
+        continue;
+      }
+      if (w) {
+        var v = look(scope, w[1]);
+        if (name === 'value') { valueProp = str(v); continue; }
+        if (BOOL[name]) { if (v) el.setAttribute(name, ''); if (name === 'checked') el.checked = !!v; continue; }
+        if (v === false || v == null) { if (name.slice(0, 5) === 'aria-') el.setAttribute(name, 'false'); continue; }
+        el.setAttribute(name, str(v));
+        continue;
+      }
+      el.setAttribute(name, val.indexOf('{{') >= 0 ? fill(val, scope) : val);
+    }
+    renderAll(kids(node), scope, el);
+    if (valueProp !== undefined) { el.value = valueProp; el.setAttribute('value', valueProp); }
+    out.appendChild(el);
+  }
+  window.DCLogic = function DCLogic(props) { this.props = props; this.state = {}; };
+  DCLogic.prototype.setState = function (patch) {
+    if (typeof patch === 'function') patch = patch(this.state, this.props);
+    var changed = false;
+    for (var k in patch) if (this.state[k] !== patch[k]) { changed = true; break; }
+    this.state = Object.assign({}, this.state, patch);
+    if (changed && this.__render) this.__render();
+  };
+  DCLogic.prototype.forceUpdate = function () { if (this.__render) this.__render(); };
+  window.mountDC = function (Component, props) {
+    var tpl = document.getElementById('dc'), root = document.getElementById('app');
+    var comp = new Component(props);
+    comp.__render = function () {
+      var act = document.activeElement, id = act && act.id, s0 = null, s1 = null;
+      try { s0 = act.selectionStart; s1 = act.selectionEnd; } catch (e) {}
+      var open = []; root.querySelectorAll('details').forEach(function (d, i) { if (d.open) open.push(i); });
+      var frag = document.createDocumentFragment();
+      renderAll(tpl.content.childNodes, comp.renderVals(), frag);
+      root.replaceChildren(frag);
+      var ds = root.querySelectorAll('details'); open.forEach(function (i) { if (ds[i]) ds[i].open = true; });
+      if (id) { var n = document.getElementById(id); if (n) { n.focus(); try { if (s0 != null) n.setSelectionRange(s0, s1); } catch (e) {} } }
+    };
+    comp.__render();
+  };
+})();
+</script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { lang: 'en', menu: null, dEligible: props.startEligible ?? true, dState: 'all', dCity: 'all', svc: {} };
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#D71920';
+    const s = this.state;
+    const NAV = [
+      ['Trucks', ['MDT (10-19 tonnes)', 'HDT (R) (28-48 tonnes)', 'HDT (RT) (28-48 tonnes)', 'HDT (C) (19-35 tonnes)', 'HDT (T) (40-55 tonnes)']],
+      ['Buses', ['School Bus', 'Staff Bus', 'Medium Duty Bus Chassis', 'Heavy Duty Bus Chassis']],
+      ['Parts and Services', ['Rakshana', 'Truckonnect', 'Genuine Parts', 'Share your Feedback']],
+      ['Pre-Owned Trucks', []],
+      ['Dealership', ['Find a Dealer', 'Become a Dealer']],
+      ['Customers', ['Testimonials', 'Kilometer Millionaire', 'Important Information for Customers']]
+    ];
+    const navItems = NAV.map(([label, subs]) => {
+      const isOpen = s.menu === label && subs.length > 0;
+      const current = label === 'Dealership';
+      return {
+        label, hasSub: subs.length > 0, isOpen, showMenu: isOpen,
+        items: subs.map((x) => ({ label: x })),
+        style: `display: inline-flex; align-items: center; gap: 4px; min-height: 44px; padding: 0; border: 0; background: transparent; font-size: 15px; font-weight: 600; cursor: pointer; color: ${isOpen || current ? '#D71920' : '#1A1A1A'}; box-shadow: ${current ? 'inset 0 -2px 0 #D71920' : 'none'}`,
+        open: () => this.setState({ menu: label }),
+        toggle: () => this.setState({ menu: s.menu === label ? null : label })
+      };
+    });
+    // Real dealers from bharatbenz.com/find-a-dealer. `ncr` = sample Parivartan eligibility (dealer in an NCR district).
+    const DIR = [
+      ['Autobahn Trucking - Faridabad', 'Faridabad', 'Haryana', 'Ground Floor & First Floor, Plot No.80, Sector - 58, Transport Nagar, Ballabgarh, Faridabad, Haryana, 121004', true],
+      ['Autobahn Trucking - Palwal', 'Palwal', 'Haryana', 'Khatoni No 185/187 and 186/188, Village Bahraula, Bahraula flyover, Palwal, Haryana, 121102', true],
+      ['Dhingra Trucking - Bahadurgarh', 'Bahadurgarh', 'Haryana', 'Beside Swami Filling Station, opposite Jhajjar Police, Jhajjar - Bahadurgarh Rd, Jhajjar, Haryana 124103', true],
+      ['Dhingra Trucking - Charkhi Dadari', 'Charkhi Dadri', 'Haryana', 'Plot No.1 Loharu Road, Charkhi Dadri, Bhiwani 127306', true],
+      ['Dhingra Trucking - Dharuhera', 'Dharuhera', 'Haryana', 'Plot No. 22, Dharuhera Industrial Area, Dist. Rewari, Haryana 123106', true],
+      ['Dhingra Trucking - Gurgaon', 'Gurgaon', 'Haryana', 'Khasra Killa No 2482/320/2/2, Opposite Shikopur Turning, Village Rampura NH-8, Jaipur Highway, Gurgaon, Haryana, 122002', true],
+      ['Dhingra Trucking - Hisar', 'Hisar', 'Haryana', 'Plot No.175, Sector 27 & 28, Hisar, Haryana 125001', false],
+      ['Dhingra Trucking - Karnal', 'Karnal', 'Haryana', 'Khasra No 74/16/1/17, 18, 23 & 24, Village Bastra, Ambala Delhi NH-1, Dist - Karnal, Haryana 132114', true],
+      ['Dhingra Trucking - Narayangarh', 'Narayangarh', 'Haryana', 'Khasara No 48/15/2, Village Shehzadpur, Go Shala near Flyover, Tehsil Narayangarh, Ambala, Haryana, 134202', false],
+      ['Dhingra Trucking - Safidon', 'Safidon', 'Haryana', 'Khewat No 124, Khasra No 133, Panipat Road, Anaj Mandi, Safidon, Jind, Haryana 126112', true],
+      ['Dhingra Trucking - Sonipat', 'Sonipat', 'Haryana', 'Plot Khewat No. 194, Khata No. 228, Bahalgarh Road, Sonipat, Haryana, 131021', true],
+      ['Dhingra Trucking - Yamuna Nagar', 'Yamuna Nagar', 'Haryana', 'Khewat No 18 Khasara No 10/23, Teh Jagadhri, Bham Bholi, Yamunanagar, Haryana, 133103', false],
+      ['Dhingra Trucking - Kashmiri Gate', 'New Delhi', 'Delhi', 'Shop no 1522, Ground floor, Kashmere Gate, New Delhi, 110006', true],
+      ['Dhingra Trucking - SGTN/ Alipur', 'Alipur', 'Delhi', 'Khasra No: 292 293, Village Siraspur, Alipur, Outer Delhi, 110043', true],
+      ['Autobahn Trucking - Agra', 'Agra', 'Uttar Pradesh', 'Property No 162/1, NH-19, Nagla Rambaksh, Bhagupur, Kuberpur, Etmadpur, Agra, Uttar Pradesh, 283202', false],
+      ['Autobahn Trucking - Bareilly', 'Bareilly', 'Uttar Pradesh', 'Shop No B - 11, Transport Nagar, Transport Nagar Road, Mohenpur, Bareilly, Uttar Pradesh, 243123', false],
+      ['Autobahn Trucking - Ghaziabad', 'Ghaziabad', 'Uttar Pradesh', 'Plot No 1283, 1285, 1284, Morta, Delhi-Meerut Road, Metro Pillar No 700, Ghaziabad, Uttar Pradesh, 201003', true],
+      ['Autobahn Trucking - Moradabad', 'Moradabad', 'Uttar Pradesh', 'Khasra No 93A, 93B, Rampur Road, Dilari, Moradabad, Uttar Pradesh, 244401', false],
+      ['Autobahn Trucking - Muzaffarnagar', 'Muzaffarnagar', 'Uttar Pradesh', 'Khasra No 295, Near Toll Plaza, Chhapar, Muzaffarnagar, Uttar Pradesh, 251307', true],
+      ['Autobahn Trucking - Noida', 'Noida', 'Uttar Pradesh', 'Workspace by Innova, H-57, Sector-63, Noida, near Noida Electronic City metro station', true]
+    ].map(([name, city, state, address, eligible]) => ({ name, city, state, address, eligible }));
+    const inState = DIR.filter((d) => s.dState === 'all' || d.state === s.dState);
+    const dirDealers = inState.filter((d) => (!s.dEligible || d.eligible) && (s.dCity === 'all' || d.city === s.dCity));
+    const seg = (on) => `flex: 1 1 auto; min-height: 44px; padding: 0 14px; border: 0; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 700; background: ${on ? '#D71920' : 'transparent'}; color: ${on ? '#FFFFFF' : '#1A1A1A'}`;
+    const pill = (on) => `min-height: 28px; padding: 2px 12px; border: 0; cursor: pointer; font-size: 13px; font-weight: 600; background: ${on ? '#FFFFFF' : 'transparent'}; color: ${on ? '#111111' : '#C9CCCF'}`;
+    const svcs = ['Sales', 'Services', 'Spare Parts', 'Used Vehicles'].map((label) => ({
+      label, on: !!s.svc[label],
+      toggle: () => this.setState({ svc: { ...s.svc, [label]: !s.svc[label] } })
+    }));
+    return {
+      accent,
+      isEn: s.lang === 'en', isHi: s.lang === 'hi',
+      enStyle: pill(s.lang === 'en'), hiStyle: pill(s.lang === 'hi'),
+      setEn: () => this.setState({ lang: 'en' }), setHi: () => this.setState({ lang: 'hi' }),
+      navItems, closeMenu: () => this.setState({ menu: null }),
+      dirDealers, dCount: dirDealers.length, dNone: dirDealers.length === 0,
+      dCountLabel: s.dEligible ? 'Parivartan eligible dealers found' : 'dealers found',
+      dEligibleOnly: s.dEligible, dAllOn: !s.dEligible,
+      dElStyle: seg(s.dEligible), dAllStyle: seg(!s.dEligible),
+      dShowEligible: () => this.setState({ dEligible: true }),
+      dShowAll: () => this.setState({ dEligible: false }),
+      dState: s.dState, dCity: s.dCity,
+      dStates: [...new Set(DIR.map((d) => d.state))].sort().map((name) => ({ name })),
+      dCities: [...new Set(inState.map((d) => d.city))].sort().map((name) => ({ name })),
+      onDState: (e) => this.setState({ dState: e.target.value, dCity: 'all' }),
+      onDCity: (e) => this.setState({ dCity: e.target.value }),
+      svcs,
+      clearAll: () => this.setState({ dEligible: false, dState: 'all', dCity: 'all', svc: {} })
+    };
+  }
+}
+mountDC(Component, {"accent": "#D71920", "startEligible": true});
+</script>
+</body>
+</html>
