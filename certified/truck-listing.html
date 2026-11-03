@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Truck Listing – Used BharatBenz Trucks — BharatBenz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Roboto',Arial,sans-serif;color:#222222;background:#FFFFFF}
+a{color:#A80C14}a:hover{color:#7E0910}
+*{box-sizing:border-box}
+button,input,select{font-family:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #F5A623;outline-offset:2px}
+.bb-btn:hover{background:#7E0910 !important}
+.bb-out:hover{background:#000000 !important;color:#FFFFFF !important}
+.bb-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.bb-line{height:44px;border:0;border-bottom:1px solid #8C8C8C;background:transparent;color:#FFFFFF;font-size:16px;padding:0 2px}
+.bb-line option{color:#000000}
+.bb-nav-item{position:relative;display:flex;align-items:center}
+.bb-dd{display:none;position:absolute;top:100%;left:-14px;min-width:250px;background:#FFFFFF;box-shadow:0 10px 28px rgba(0,0,0,0.16);border-top:3px solid #A80C14;padding:8px 0;z-index:30}
+.bb-nav-item:hover .bb-dd,.bb-nav-item:focus-within .bb-dd{display:block}
+.bb-dd a{display:block;padding:11px 18px;color:#222222;text-decoration:none;font-size:14px;font-weight:400;white-space:nowrap}
+.bb-dd a:hover{background:#F4F4F4;color:#A80C14}
+.bb-top:hover{color:#A80C14 !important}
+.bb-foot a{color:#CFCFCF;text-decoration:none}
+.bb-foot a:hover{color:#FFFFFF;text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="dc">
+<div style="width: 100%; background: #FFFFFF; font-family: 'Roboto', Arial, sans-serif; color: #222222">
+
+<!-- Browser address bar -->
+<div style="background: #E8E8E8; border-bottom: 1px solid #CFCFCF; padding: 8px 16px; display: flex; align-items: center; gap: 12px">
+<div aria-hidden="true" style="display: flex; gap: 6px; flex: none"><span style="width: 12px; height: 12px; border-radius: 50%; background: #BDBDBD"></span><span style="width: 12px; height: 12px; border-radius: 50%; background: #BDBDBD"></span><span style="width: 12px; height: 12px; border-radius: 50%; background: #BDBDBD"></span></div>
+<div style="flex: 1; min-width: 0; max-width: 720px; margin: 0 auto; background: #FFFFFF; border-radius: 999px; height: 32px; padding: 0 14px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #222222; overflow: hidden; white-space: nowrap">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4A4A4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+<span>https://www.bharatbenz.com/certified/<strong style="color: #000000">truck-listing</strong></span>
+</div>
+</div>
+
+<!-- Utility bar (live site) -->
+<div style="background: {{accent}}; color: #FFFFFF; font-size: 12px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 24px; min-height: 34px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px">
+<span style="color: #FFC266; font-weight: 500">Customer Toll Free No. : <a href="tel:180030012345" style="color: #FFC266; text-decoration: none">1800 300 12345</a></span>
+<nav aria-label="Utility" style="display: flex; gap: 18px; flex-wrap: wrap; align-items: center">
+<a href="#" style="color: #FFFFFF; text-decoration: none">Newsroom</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Image Gallery</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Blog</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">About us</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Construction &amp; Mining Range Launch</a>
+<a href="#" style="color: #FFFFFF; text-decoration: none">Contact us</a>
+<a href="https://www.bharatbenz.com/hi/" lang="hi" style="background: #000000; color: #FFFFFF; text-decoration: none; padding: 9px 14px">हिंदी</a>
+</nav>
+</div>
+</div>
+
+<!-- Header (live site menu) -->
+<header style="background: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,0.08); position: relative; z-index: 10">
+<div style="max-width: 1280px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<a href="index.html" aria-label="BharatBenz home" style="display: flex; align-items: center; gap: 12px; text-decoration: none; flex: none">
+<img src="../assets/certified/bharatbenz-emblem.png" alt="" style="height: 48px; width: auto; display: block">
+<img src="../assets/certified/bharatbenz-wordmark-dark.png" alt="BharatBenz" style="height: 15px; width: auto; display: block">
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-size: 14px">
+<div class="bb-nav-item"><a href="#" aria-haspopup="true" class="bb-top" style="display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Trucks<svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a><div class="bb-dd"><a href="#">MDT (10-19 tonnes)</a><a href="#">HDT R (28-48 tonnes)</a><a href="#">HDT RT (28-48 tonnes)</a><a href="#">HDT C (19-35 tonnes)</a><a href="#">HDT T (40-55 tonnes)</a></div></div><div class="bb-nav-item"><a href="#" aria-haspopup="true" class="bb-top" style="display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Buses<svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a><div class="bb-dd"><a href="#">School Bus</a><a href="#">Staff Bus</a><a href="#">MDB 1914 Chassis</a><a href="#">HDB 1624 Chassis</a></div></div><div class="bb-nav-item"><a href="#" aria-haspopup="true" class="bb-top" style="display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Parts and Services<svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a><div class="bb-dd"><a href="#">Rakshana</a><a href="#">Truckonnect</a><a href="#">Genuine Parts</a><a href="#">Share your Feedback</a></div></div><div class="bb-nav-item"><a href="index.html" aria-current="page" aria-haspopup="true" class="bb-top" style="display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: {{accent}}; text-decoration: none; font-weight: 700">Pre-Owned Trucks<svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a><div class="bb-dd"><a href="index.html">BharatBenz Certified &amp; Exchange</a><a href="truck-listing.html">Truck Listing</a><a href="index.html">Sell / Exchange Your Truck</a></div></div><div class="bb-nav-item"><a href="dealer-locator.html" class="bb-top" style="display: inline-flex; align-items: center; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Dealership</a></div><div class="bb-nav-item"><a href="#" aria-haspopup="true" class="bb-top" style="display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Customers<svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></a><div class="bb-dd"><a href="#">Testimonials</a><a href="#">Kilometer Millionaire</a><a href="#">Important Information for Customers</a></div></div><div class="bb-nav-item"><a href="#" class="bb-top" style="display: inline-flex; align-items: center; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Newsroom</a></div><div class="bb-nav-item"><a href="#" class="bb-top" style="display: inline-flex; align-items: center; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Blog</a></div><div class="bb-nav-item"><a href="#" class="bb-top" style="display: inline-flex; align-items: center; min-height: 44px; color: #222222; text-decoration: none; font-weight: 500">Contact us</a></div>
+<a href="index.html" class="bb-btn" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; padding: 0 18px; height: 44px; display: inline-flex; align-items: center; border-radius: 2px; font-weight: 700; margin-left: 4px">Enquire Now</a>
+</nav>
+</div>
+</header>
+
+<!-- Breadcrumb -->
+<div style="background: #FFFFFF">
+<div style="max-width: 1280px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
+<nav aria-label="Breadcrumb" style="font-size: 12px; color: #333333; display: flex; align-items: center; gap: 6px"><a href="#" style="color: #333333; text-decoration: none">Home</a><svg aria-hidden="true" width="8" height="8" viewBox="0 0 8 8"><path d="M2 0l4 4-4 4z" fill="{{accent}}"></path></svg><a href="index.html" style="color: #333333; text-decoration: none">BharatBenz Certified</a><svg aria-hidden="true" width="8" height="8" viewBox="0 0 8 8"><path d="M2 0l4 4-4 4z" fill="{{accent}}"></path></svg><span style="color: {{accent}}">Truck Listing</span></nav>
+<a href="index.html" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #222222; font-size: 14px; font-weight: 700; text-decoration: none"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>Back to Certified &amp; Exchange</a>
+</div>
+</div>
+
+<!-- Listing -->
+<section aria-labelledby="list-h" style="background: #F4F4F4">
+<div style="max-width: 1280px; margin: 0 auto; padding: 32px 24px 72px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h1 id="list-h" style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 700; color: {{accent}}">Truck Listing</h1>
+<p style="margin: 0; font-size: 16px; font-weight: 700; font-style: italic; color: #222222">Used BharatBenz trucks for sale across India.</p>
+</div>
+<span aria-live="polite" style="font-size: 14px; font-weight: 700; color: #222222">{{countLabel}}</span>
+</div>
+
+<!-- Filters -->
+<form aria-label="Filter trucks" style="background: #000000; padding: 20px 24px 24px; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px; color: #FFFFFF">
+<label style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 15px">Location
+<select onChange="{{onState}}" value="{{fState}}" class="bb-line">
+<template data-for="stateOpts" data-as="o"><option value="{{o}}">{{o}}</option></template>
+</select></label>
+<label style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 15px">Model
+<select onChange="{{onModel}}" value="{{fModel}}" class="bb-line">
+<template data-for="modelOpts" data-as="o"><option value="{{o}}">{{o}}</option></template>
+</select></label>
+<label style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 15px">Sort by
+<select onChange="{{onSort}}" value="{{sort}}" class="bb-line">
+<template data-for="sortOpts" data-as="o"><option value="{{o}}">{{o}}</option></template>
+</select></label>
+<button type="button" onClick="{{reset}}" class="bb-out" style="flex: 0 0 auto; height: 48px; padding: 0 22px; background: transparent; color: #FFFFFF; border: 1px solid #FFFFFF; border-radius: 3px; font-size: 15px; font-weight: 700; text-transform: uppercase; cursor: pointer">Reset</button>
+</form>
+
+<!-- Cards -->
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px">
+<template data-for="visible" data-as="v">
+<article class="bb-card" style="background: #FFFFFF; border: 1px solid #DCDCDC; display: flex; flex-direction: column">
+<div style="position: relative; aspect-ratio: 4 / 3; background: #E6E6E6; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" viewBox="0 0 200 110" style="width: 62%; height: auto"><rect x="10" y="20" width="110" height="60" fill="#CFCFCF"></rect><path d="M126 80V36q0-8 8-8h22q8 0 13 8l14 26v18z" fill="#BDBDBD"></path><circle cx="42" cy="88" r="12" fill="#8C8C8C"></circle><circle cx="70" cy="88" r="12" fill="#8C8C8C"></circle><circle cx="160" cy="88" r="12" fill="#8C8C8C"></circle></svg>
+<span style="position: absolute; top: 0; left: 0; background: #000000; color: #FFFFFF; font-size: 12px; font-weight: 700; text-transform: uppercase; padding: 6px 10px">Pre-owned</span>
+<span style="position: absolute; bottom: 8px; right: 10px; font-size: 11px; color: #4A4A4A">Photo: dealer upload</span>
+</div>
+<div style="padding: 18px; display: flex; flex-direction: column; gap: 12px; flex: 1">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
+<span style="font-size: 26px; font-weight: 900">{{v.model}}</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; font-size: 14px; color: #4A4A4A"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A80C14" stroke-width="2.2"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>{{v.state}}</span>
+</div>
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; font-size: 13px; border-top: 1px solid #E6E6E6; padding-top: 12px">
+<div><dt style="color: #5B5B5B">Manufacturing year</dt><dd style="margin: 2px 0 0; font-weight: 700">{{v.year}}</dd></div>
+<div><dt style="color: #5B5B5B">Kms driven</dt><dd style="margin: 2px 0 0; font-weight: 700">{{v.kms}}</dd></div>
+<div><dt style="color: #5B5B5B">Warranty</dt><dd style="margin: 2px 0 0; font-weight: 700">{{v.warranty}}</dd></div>
+<div><dt style="color: #5B5B5B">Reference no.</dt><dd style="margin: 2px 0 0; font-weight: 700; overflow-wrap: anywhere">{{v.ref}}</dd></div>
+</dl>
+<div style="display: flex; gap: 8px; margin-top: auto">
+<a href="{{v.url}}" target="_blank" rel="noopener" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; height: 44px; border: 1px solid #000000; border-radius: 3px; color: #000000; text-decoration: none; font-weight: 700; font-size: 13px; text-transform: uppercase">View Details</a>
+<a href="index.html" class="bb-btn" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; height: 44px; border-radius: 3px; background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 13px; text-transform: uppercase">Enquire Now</a>
+</div>
+</div>
+</article>
+</template>
+</div>
+
+<template data-if="noResults">
+<div style="border: 1px dashed #8C8C8C; background: #FFFFFF; padding: 32px; text-align: center; font-size: 15px; color: #4A4A4A; display: flex; flex-direction: column; align-items: center; gap: 8px">
+<span>No trucks match these filters right now.</span>
+<a href="index.html" style="color: {{accent}}; font-weight: 700; display: inline-flex; align-items: center; min-height: 44px">Can't find your vehicle? Send us an enquiry</a>
+</div>
+</template>
+
+<template data-if="hasMore">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 8px">
+<button type="button" onClick="{{loadMore}}" class="bb-btn" style="display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 36px; border: 0; background: {{accent}}; color: #FFFFFF; border-radius: 3px; font-weight: 700; font-size: 16px; text-transform: uppercase; cursor: pointer">Load More<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></button>
+<span style="font-size: 13px; color: #4A4A4A">{{moreLabel}}</span>
+</div>
+</template>
+</div>
+</section>
+
+<!-- Footer (live site) -->
+<footer class="bb-foot" style="background: #1A1A1A; color: #CFCFCF">
+<div style="max-width: 1280px; margin: 0 auto; padding: 48px 24px 0; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid #333333">
+<a href="index.html" aria-label="BharatBenz home" style="display: inline-flex; align-items: center; gap: 12px">
+<img src="../assets/certified/bharatbenz-emblem.png" alt="" style="height: 52px; width: auto; display: block">
+<img src="../assets/certified/bharatbenz-wordmark-white.png" alt="BharatBenz" style="height: 16px; width: auto; display: block">
+</a>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="index.html" class="bb-btn" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; background: {{accent}}; color: #FFFFFF; border-radius: 3px; font-size: 14px; font-weight: 700; text-transform: uppercase; text-decoration: none">Get a Quote</a>
+<a href="#" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border: 1px solid #FFFFFF; color: #FFFFFF; border-radius: 3px; font-size: 14px; font-weight: 700; text-transform: uppercase">Service Workshop</a>
+<a href="tel:180030012345" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border: 1px solid #FFFFFF; color: #FFFFFF; border-radius: 3px; font-size: 14px; font-weight: 700; text-transform: uppercase">Call Us · 1800 300 12345</a>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; flex: 1 1 170px; min-width: 0"><span style="font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px">Trucks</span><a href="#">MDT (10-19 tonnes)</a><a href="#">HDT (R) (28-48 tonnes)</a><a href="#">HDT (RT) (28-48 tonnes)</a><a href="#">HDT (C) (19-35 tonnes)</a><a href="#">HDT (T) (40-55 tonnes)</a></div><div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; flex: 1 1 170px; min-width: 0"><span style="font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px">Buses</span><a href="#">School Bus</a><a href="#">Staff Bus</a><a href="#">Medium Duty Bus Chassis</a><a href="#">Heavy Duty Bus Chassis</a></div><div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; flex: 1 1 170px; min-width: 0"><span style="font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px">Services</span><a href="#">Service Workshops</a><a href="#">Genuine Parts</a><a href="#">Rakshana</a><a href="#">Share your Feedback</a></div><div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; flex: 1 1 170px; min-width: 0"><span style="font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px">Company</span><a href="#">About us</a><a href="dealer-locator.html">Find a Dealer</a><a href="#">Testimonials</a><a href="#">Careers</a><a href="#">BS-VI</a></div><div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; flex: 1 1 170px; min-width: 0"><span style="font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px">Explore</span><a href="#">Newsroom</a><a href="#">Blog</a><a href="#">Select My Truck</a><a href="dealer-locator.html">Authorized Dealers</a><a href="#">Contact us</a></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 6px">Follow us</span>
+<a href="https://www.facebook.com/bharatbenz1" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #4A4A4A; border-radius: 22px; font-size: 13px">Facebook</a><a href="https://www.instagram.com/bharatbenz/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #4A4A4A; border-radius: 22px; font-size: 13px">Instagram</a><a href="https://twitter.com/BharatBenz1" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #4A4A4A; border-radius: 22px; font-size: 13px">X (Twitter)</a><a href="https://www.youtube.com/user/BharatBenzTrucks1" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #4A4A4A; border-radius: 22px; font-size: 13px">YouTube</a><a href="https://www.linkedin.com/showcase/bharatbenz" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #4A4A4A; border-radius: 22px; font-size: 13px">LinkedIn</a>
+</div>
+</div>
+<div style="border-top: 1px solid #333333; margin-top: 36px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 12px">
+<span style="color: #BDBDBD">COPYRIGHT © 2026 BHARATBENZ. ALL RIGHTS RESERVED.</span>
+<nav aria-label="Legal" style="display: flex; flex-wrap: wrap; gap: 18px">
+<a href="https://www.daimlertruck.com/en" target="_blank" rel="noopener">Daimler Trucks</a>
+<a href="https://www.bharatbenz.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+<a href="https://www.bharatbenz.com/legal-notices-and-terms" target="_blank" rel="noopener">Legal Disclaimer</a>
+</nav>
+</div>
+</div>
+</footer>
+
+</div>
+</template>
+<script>
+(function () {
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g, WHOLE = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/;
+  var BOOL = { disabled: 1, checked: 1, selected: 1, required: 1, hidden: 1, open: 1 };
+  function look(scope, path) {
+    if (path === 'true') return true; if (path === 'false') return false;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return Number(path);
+    var parts = path.split('.'), v = scope[parts[0]];
+    for (var i = 1; i < parts.length && v != null; i++) v = v[parts[i]];
+    return v;
+  }
+  function str(v) { return v == null ? '' : String(v); }
+  function fill(text, scope) { return text.replace(HOLE, function (_, p) { return str(look(scope, p)); }); }
+  function kids(node) { return node.content ? node.content.childNodes : node.childNodes; }
+  function renderAll(nodes, scope, out) { for (var i = 0; i < nodes.length; i++) render(nodes[i], scope, out); }
+  function render(node, scope, out) {
+    if (node.nodeType === 3) { out.appendChild(document.createTextNode(fill(node.data, scope))); return; }
+    if (node.nodeType !== 1) return;
+    if (node.localName === 'template' && node.hasAttribute('data-for')) {
+      var list = look(scope, node.getAttribute('data-for')) || [], as = node.getAttribute('data-as');
+      for (var i = 0; i < list.length; i++) { var sc = Object.create(scope); sc[as] = list[i]; sc.$index = i; renderAll(kids(node), sc, out); }
+      return;
+    }
+    if (node.localName === 'template' && node.hasAttribute('data-if')) {
+      if (look(scope, node.getAttribute('data-if'))) renderAll(kids(node), scope, out);
+      return;
+    }
+    var el = document.createElementNS(node.namespaceURI, node.localName), valueProp;
+    for (var a = 0; a < node.attributes.length; a++) {
+      var at = node.attributes[a], name = at.name, val = at.value, w = WHOLE.exec(val);
+      if (name.slice(0, 2) === 'on' && w) {
+        var fn = look(scope, w[1]), ev = name.slice(2);
+        if (ev === 'change') ev = 'input';
+        if (typeof fn === 'function') el.addEventListener(ev, fn);
+        continue;
+      }
+      if (w) {
+        var v = look(scope, w[1]);
+        if (name === 'value') { valueProp = str(v); continue; }
+        if (BOOL[name]) { if (v) el.setAttribute(name, ''); if (name === 'checked') el.checked = !!v; continue; }
+        if (v === false || v == null) { if (name.slice(0, 5) === 'aria-') el.setAttribute(name, 'false'); continue; }
+        el.setAttribute(name, str(v));
+        continue;
+      }
+      el.setAttribute(name, val.indexOf('{{') >= 0 ? fill(val, scope) : val);
+    }
+    renderAll(kids(node), scope, el);
+    if (valueProp !== undefined) { el.value = valueProp; el.setAttribute('value', valueProp); }
+    out.appendChild(el);
+  }
+  window.DCLogic = function DCLogic(props) { this.props = props; this.state = {}; };
+  DCLogic.prototype.setState = function (patch) {
+    if (typeof patch === 'function') patch = patch(this.state, this.props);
+    var changed = false;
+    for (var k in patch) if (this.state[k] !== patch[k]) { changed = true; break; }
+    this.state = Object.assign({}, this.state, patch);
+    if (changed && this.__render) this.__render();
+  };
+  DCLogic.prototype.forceUpdate = function () { if (this.__render) this.__render(); };
+  window.mountDC = function (Component, props) {
+    var tpl = document.getElementById('dc'), root = document.getElementById('app');
+    var comp = new Component(props);
+    comp.__render = function () {
+      var act = document.activeElement, id = act && act.id, s0 = null, s1 = null;
+      try { s0 = act.selectionStart; s1 = act.selectionEnd; } catch (e) {}
+      var open = []; root.querySelectorAll('details').forEach(function (d, i) { if (d.open) open.push(i); });
+      var frag = document.createDocumentFragment();
+      renderAll(tpl.content.childNodes, comp.renderVals(), frag);
+      root.replaceChildren(frag);
+      var ds = root.querySelectorAll('details'); open.forEach(function (i) { if (ds[i]) ds[i].open = true; });
+      if (id) { var n = document.getElementById(id); if (n) { n.focus(); try { if (s0 != null) n.setSelectionRange(s0, s1); } catch (e) {} } }
+    };
+    comp.__render();
+  };
+})();
+</script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { fState: 'All', fModel: 'All', sort: 'Latest listed', shown: 12 };
+  }
+  renderVals() {
+    const s = this.state;
+    const accent = this.props.accent ?? '#A80C14';
+    const PAGE = 12;
+
+    // Listings from bharatbenz.com/buy-second-hand-trucks/buy/All-All (model, state, reference no., year, km, warranty)
+    const raw = [
+      ['914R','Gujarat','BB006779R',2015,346782,'No'],
+      ['2523R','Maharashtra','BB0067625R',2013,702030,'No'],
+      ['3123R','Maharashtra','BB0067531R',2013,671000,'No'],
+      ['2523C','Maharashtra','BB0067425C',2014,612000,'No'],
+      ['3123R','Maharashtra','BB0067331R',2013,424900,'No'],
+      ['2523C','Maharashtra','BB0067225C',2013,400000,'No'],
+      ['3123R','Maharashtra','BB0067131R',2013,896200,'No'],
+      ['2523R','Maharashtra','BB0067025R',2013,638900,'No'],
+      ['2523C','Maharashtra','BB0066925C',2013,288000,'No'],
+      ['2523C','Maharashtra','BB0066825C',2016,384000,'No'],
+      ['1214R','Maharashtra','BB0066712R',2013,365700,'No'],
+      ['1214R','Gujarat','BB0066612R',2014,892130,'No'],
+      ['3723R','Gujarat','BB0066537R',2016,812562,'No'],
+      ['3128C','Gujarat','BB0066431C',2018,263991,'No'],
+      ['2523C','Gujarat','BB0066325C',2016,299181,'No'],
+      ['3128C','Gujarat','BB0066231C',2017,93433,'No'],
+      ['3723R','Gujarat','BB0066137R',2016,643453,'No'],
+      ['3128C','Gujarat','BB0066031C',2018,387565,'No'],
+      ['1214R','Gujarat','BB0065912R',2013,321820,'No'],
+      ['2523R','Maharashtra','BB0065825R',2013,617000,'No'],
+      ['914R','Maharashtra','BB006579R',2013,512400,'No'],
+      ['3123R','Maharashtra','BB0065631R',2013,987000,'No'],
+      ['3123R','Maharashtra','BB0065531R',2013,588000,'No'],
+      ['1214R','Maharashtra','BB0065412R',2013,1011200,'No'],
+      ['4928T','Gujarat','BB0065349T',2016,241292,'No'],
+      ['1214R','Gujarat','BB0065212R',2013,437231,'No'],
+      ['3723R','Gujarat','BB0065137R',2017,291827,'No'],
+      ['3723R','Gujarat','BB0065037R',2016,895110,'No'],
+      ['1617R','Gujarat','BB0064916R',2017,594367,'No'],
+      ['1617R','Gujarat','BB0064816R',2016,448291,'No'],
+      ['3723R','Gujarat','BB0064737R',2016,652278,'No'],
+      ['1214R','Gujarat','BB0064612R',2013,162918,'No'],
+      ['1214R','Karnataka','BB0064512R',2017,214785,'No'],
+      ['1215R','Karnataka','BB0064412R',2019,427574,'No'],
+      ['1215R','Karnataka','BB0064312R',2018,55642,'No'],
+      ['4928T','Gujarat','BB0064249T',2017,255676,'No'],
+      ['1617R','Gujarat','BB0064116R',2016,627281,'No'],
+      ['1214R','Gujarat','BB0063612R',2014,70542,'No'],
+      ['4928T','Gujarat','BB0063549T',2018,601375,'No'],
+      ['3123R','Gujarat','BB0063431R',2018,633245,'No'],
+      ['4828R','Gujarat','BB0063348R',2022,290610,'No'],
+      ['1617R','Gujarat','BB0063216R',2017,398727,'No'],
+      ['3528C','Karnataka','BB0064035C',2023,145000,'No'],
+      ['914R','Karnataka','BB006399R',2014,385000,'No'],
+      ['2823C','Karnataka','BB0063828C',2021,200000,'No'],
+      ['1215R','Karnataka','BB0063712R',2020,28000,'No'],
+      ['3123R','Haryana','BB0061631R',2018,650000,'No'],
+      ['3123RT','Gujarat','BB0061531RT',2018,698728,'No'],
+      ['914R','Gujarat','BB006149R',2015,321232,'No'],
+      ['1617R','Gujarat','BB0061316R',2015,382911,'No'],
+      ['3723R','Gujarat','BB0061237R',2016,678564,'No'],
+      ['3723R','Gujarat','BB0061137R',2017,821092,'No'],
+      ['3128C','Gujarat','BB0061031C',2019,306481,'No'],
+      ['4928T','Gujarat','BB0060949T',2016,511282,'No'],
+      ['1617R','Gujarat','BB0060816R',2016,86630,'No'],
+      ['4023T','Gujarat','BB0060740T',2016,697182,'No'],
+      ['2523R','Gujarat','BB0060625R',2013,271185,'No'],
+      ['3123R','Gujarat','BB0060531R',2015,265459,'No'],
+      ['914R','Gujarat','BB006319R',2017,575192,'No'],
+      ['1214R','Gujarat','BB0063012R',2013,578051,'No']
+    ];
+    const trucks = raw.map(([model, state, ref, year, km, warranty], i) => ({
+      i, model, state, ref, year, km, warranty,
+      kms: km.toLocaleString('en-IN') + ' km',
+      url: 'https://www.bharatbenz.com/used-vehicles/BharatBenz--resale-' + ref
+    }));
+
+    // Filter options as on the live listing page
+    const stateOpts = ['All', 'Andhra Pradesh', 'Bihar', 'Chhattisgarh', 'Delhi', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Rajasthan', 'Tamil Nadu', 'West Bengal'];
+    const modelOpts = ['All', '1014R', '1015R', '1214R', '1215R', '1216R', '1217C', '1414R', '1613C', '1617R', '1623C', '1917R', '1926C', '2523C', '2523R', '2528C', '2823C', '2823R', '2826C', '3123R', '3123RT', '3128C', '3523R', '3528C', '3723R', '3723RT', '4023T', '4228R', '4828R', '4928T', '5428T', '5528T', '914R'];
+    const sortOpts = ['Latest listed', 'Newest model year', 'Lowest kms driven'];
+
+    const filtered = trucks.filter((t) => (s.fState === 'All' || t.state === s.fState) && (s.fModel === 'All' || t.model === s.fModel));
+    const sorted = filtered.slice().sort((a, b) =>
+      s.sort === 'Newest model year' ? (b.year - a.year || a.i - b.i)
+      : s.sort === 'Lowest kms driven' ? (a.km - b.km)
+      : a.i - b.i);
+    const visible = sorted.slice(0, s.shown);
+    const remaining = sorted.length - visible.length;
+
+    return {
+      accent,
+      stateOpts, modelOpts, sortOpts,
+      fState: s.fState, fModel: s.fModel, sort: s.sort,
+      onState: (e) => this.setState({ fState: e.target.value, shown: PAGE }),
+      onModel: (e) => this.setState({ fModel: e.target.value, shown: PAGE }),
+      onSort: (e) => this.setState({ sort: e.target.value, shown: PAGE }),
+      reset: () => this.setState({ fState: 'All', fModel: 'All', sort: 'Latest listed', shown: PAGE }),
+      visible,
+      noResults: sorted.length === 0,
+      hasMore: remaining > 0,
+      loadMore: () => this.setState({ shown: s.shown + PAGE }),
+      moreLabel: 'Showing ' + visible.length + ' of ' + sorted.length + ' · ' + Math.min(PAGE, remaining) + ' more',
+      countLabel: sorted.length + (sorted.length === 1 ? ' truck' : ' trucks') + ' found'
+    };
+  }
+}
+mountDC(Component, {"accent": "#A80C14"});
+</script>
+</body>
+</html>
