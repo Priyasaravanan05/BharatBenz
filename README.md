@@ -19,4 +19,4 @@ Self-contained page in `select-my-truck/` (assets in `select-my-truck/assets/`),
 
 Notes: truck photos, hero and logos are cropped from the design screenshot — replace with originals (same file names). Sub-application options are filled per application in `SUBS` in the listing script (Agricultural Produce done). Body copy is placeholder text from the design.
 
-Agricultural Produce notes: the 1617R image loads directly from bharatbenz.com (`uploads/truck_images/product_types/BB1617Rnew.png`); the 1415R has no photo yet (grey truck outline placeholder). Sub-application pages and the 3832R / 1415R model URLs are not built yet, so those links point to bharatbenz.com.
+Agricultural Produce notes: truck thumbnails (1617R, 2826R, 3526R, 3832R) load directly from bharatbenz.com (`uploads/truck_images/product_types/`); the 1415R has no thumbnail on bharatbenz.com, so it keeps the grey truck outline placeholder. Sub-application pages and the 3832R / 1415R model URLs are not built yet, so those links point to bharatbenz.com.
