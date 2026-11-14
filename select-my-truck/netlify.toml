@@ -1,0 +1,9 @@
+# Netlify config for the bharatbenz-select-my-truck project.
+# In Netlify, set Base directory = select-my-truck (no build command).
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
