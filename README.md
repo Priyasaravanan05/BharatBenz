@@ -15,5 +15,8 @@ Notes: dealer locations are sample data; truck listings were taken from bharatbe
 Self-contained page in `select-my-truck/` (assets in `select-my-truck/assets/`), deployed as its own Netlify project (`bharatbenz-select-my-truck`, base directory `select-my-truck`):
 
 - `select-my-truck/index.html` — Select My Truck listing page (hero, 16 applications with search, Why BharatBenz, FAQ, Select My Truck application/sub-application search, quick actions, footer)
+- `select-my-truck/agricultural-produce/index.html` — Agricultural Produce application page with final SEO content (meta, canonical, hreflang, breadcrumb + FAQ schema), Food Grains / Fruits and Vegetables sub-application cards, featured models with specs, Why BharatBenz, FAQ. Assets in `select-my-truck/assets/agricultural-produce/`. Linked from the listing card via `BUILT` in the listing script.
 
-Notes: truck photos, hero and logos are cropped from the design screenshot — replace with originals (same file names). Sub-application options are empty until the list is supplied (`SUBS` in the page script). Body copy is placeholder text from the design.
+Notes: truck photos, hero and logos are cropped from the design screenshot — replace with originals (same file names). Sub-application options are filled per application in `SUBS` in the listing script (Agricultural Produce done). Body copy is placeholder text from the design.
+
+Agricultural Produce notes: 1617R, 1215R and 1415R have no photo yet (grey truck outline placeholder). Sub-application pages and the 3832R / 1215R / 1415R model URLs are not built yet, so those links point to bharatbenz.com.
