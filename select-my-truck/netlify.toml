@@ -2,6 +2,8 @@
 # In Netlify, set Base directory = select-my-truck (no build command).
 [build]
   publish = "."
+  # Always deploy on push to main (Netlify was skipping deploys for this base directory)
+  ignore = "exit 1"
 
 [[headers]]
   for = "/assets/*"
