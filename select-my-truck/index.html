@@ -270,6 +270,8 @@ footer{background:#000;color:#fff;padding:60px 0 50px}
 
 <script>
 // Application data — edit names/links here. `url` can point at each application page once built.
+// Application pages that exist in this folder; their cards link to the page.
+const BUILT = ['agricultural-produce'];
 const APPS = [
   ['Agricultural Produce','agricultural-produce'],
   ['Auto Carriers','auto-carriers'],
@@ -287,10 +289,12 @@ const APPS = [
   ['Poultry','poultry'],
   ['Steel, Industrial Goods','steel-industrial-goods'],
   ['Textile Transportation','textile-transportation']
-].map(([name, slug]) => ({ name, slug, url: '#' + slug }));
+].map(([name, slug]) => ({ name, slug, url: BUILT.includes(slug) ? slug + '/' : '#' + slug }));
 
 // Sub-applications per application — placeholder until the real list is supplied.
-const SUBS = {};
+const SUBS = {
+  'agricultural-produce': ['Food Grains', 'Fruits and Vegetables']
+};
 
 const grid = document.getElementById('grid');
 grid.innerHTML = APPS.map(a => `
