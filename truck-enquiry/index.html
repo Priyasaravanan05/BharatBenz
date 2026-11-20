@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enquire about a BharatBenz Truck | BharatBenz</title>
+<meta name="description" content="Interested in a new BharatBenz truck? Choose your series, share your details and get a quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#A70E13; --red-dark:#8B0000; --red-bright:#BA0C15;
+    --ink:#111; --muted:#666; --line:#d9d9d9; --bg:#f4f5f7; --err:#c40000;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.45}
+  a{color:inherit}
+
+  /* utility bar */
+  .util{background:var(--red);color:#fff;font-size:12.5px}
+  .util .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 20px}
+  .util .tf b{color:#ffd24d;font-weight:500}
+  .util nav a{color:#fff;text-decoration:none;padding:0 10px;border-left:1px solid rgba(255,255,255,.55)}
+  .util nav a:first-child{border-left:0}
+  .util nav a:hover{text-decoration:underline}
+  .wrap{max-width:1180px;margin:0 auto}
+
+  /* header */
+  header.main{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:20}
+  header.main .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .logo i{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#666,#111 70%);display:block;position:relative}
+  .logo i:after{content:"";position:absolute;inset:13px 8px;border:2px solid #ddd;border-radius:50%}
+  .logo span{font-size:13px;letter-spacing:.22em;font-weight:400}
+  .logo span b{font-weight:700}
+  header nav.menu{display:flex;align-items:center;gap:26px;font-size:15px;font-weight:500}
+  header nav.menu a{text-decoration:none}
+  header nav.menu a:hover{color:var(--red)}
+  .btn-enq{background:var(--red);color:#fff!important;padding:15px 26px;font-weight:700}
+  .burger{display:none;background:none;border:0;font-size:26px;cursor:pointer}
+
+  /* banner (existing bharatbenz.com asset) */
+  .banner{background:#000;line-height:0}
+  .banner img{display:block;width:100%;height:auto;max-height:583px;object-fit:cover;object-position:center}
+  /* page head */
+  .page-head{background:var(--bg);padding:26px 0 34px}
+  .page-head .wrap{padding:0 20px}
+  .back{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--red);text-decoration:none;font-weight:500}
+  .back:hover{text-decoration:underline}
+  h1{font-size:40px;margin:18px 0 6px;font-weight:700;letter-spacing:-.01em}
+  .sub{margin:0;color:var(--muted);font-size:18px}
+
+  /* progress */
+  .progress{display:flex;align-items:center;gap:0;margin:28px 0 8px;max-width:520px}
+  .progress .st{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--muted)}
+  .progress .dot{width:34px;height:34px;border-radius:50%;border:2px solid var(--line);background:#fff;display:grid;place-items:center;font-weight:700;color:var(--muted)}
+  .progress .bar{flex:1;height:2px;background:var(--line);margin:0 12px;min-width:30px}
+  .progress .st.on{color:var(--ink)}
+  .progress .st.on .dot{border-color:var(--red);background:var(--red);color:#fff}
+  .progress .st.done .dot{border-color:var(--red);color:var(--red)}
+  .progress .bar.done{background:var(--red)}
+  .req-note{font-size:13px;color:var(--muted);margin:6px 0 0}
+
+  /* form card */
+  main{padding:0 20px 70px;background:var(--bg)}
+  .card{max-width:820px;margin:0 auto;background:#fff;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:38px 44px 40px}
+  .card h2{margin:0 0 6px;font-size:26px;text-align:center}
+  .card .lead{margin:0 0 28px;text-align:center;color:var(--muted)}
+  .step{display:none}
+  .step.show{display:block}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px}
+  .full{grid-column:1/-1}
+  .field label{display:block;font-size:13.5px;font-weight:500;margin-bottom:4px}
+  .field label em{color:var(--red);font-style:normal}
+  .field input,.field select,.field textarea{
+    width:100%;font:inherit;font-size:15px;padding:11px 2px;border:0;border-bottom:1px solid var(--line);background:transparent;outline:0;border-radius:0;color:var(--ink)}
+  .field select{appearance:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23333' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 4px center;padding-right:24px;cursor:pointer}
+  .field select:disabled{color:#999;cursor:not-allowed}
+  .field textarea{min-height:84px;resize:vertical;border:1px solid var(--line);padding:10px;margin-top:4px;border-radius:4px}
+  .field input:focus,.field select:focus{border-bottom-color:var(--red);box-shadow:0 1px 0 var(--red)}
+  .field textarea:focus{border-color:var(--red)}
+  .field.bad input,.field.bad select,.field.bad textarea{border-color:var(--err)}
+  .err{display:none;color:var(--err);font-size:12.5px;margin-top:4px}
+  .field.bad .err{display:block}
+  .check{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:#333;margin-top:2px}
+  .check input{width:18px;height:18px;margin-top:2px;accent-color:var(--red);flex:none}
+  .check a{color:var(--red);font-weight:700}
+  .check.bad{color:var(--err)}
+  .btn{display:block;width:100%;border:0;cursor:pointer;background:var(--red-dark);color:#fff;font:700 16px Roboto,Arial,sans-serif;padding:17px;border-radius:2px;margin-top:8px;transition:background .15s}
+  .btn:hover{background:var(--red)}
+  .btn[disabled]{opacity:.7;cursor:wait}
+  .linkbtn{background:none;border:0;color:var(--red);font:500 14px Roboto,Arial,sans-serif;cursor:pointer;padding:0;margin-bottom:18px}
+  .linkbtn:hover{text-decoration:underline}
+  .series-pick{max-width:460px;margin:0 auto}
+  .formerr{display:none;background:#fdeaea;color:var(--err);padding:11px 14px;border-radius:4px;font-size:14px;margin-bottom:14px}
+  .formerr.show{display:block}
+
+  /* thank you */
+  .thanks{text-align:center;padding:30px 10px 10px}
+  .thanks .tick{width:76px;height:76px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:40px;margin:0 auto 20px}
+  .thanks h2{margin-bottom:10px}
+  .thanks p{color:var(--muted);margin:0 0 24px;font-size:17px}
+  .thanks .btn{display:inline-block;width:auto;padding:15px 36px;text-decoration:none}
+
+  /* footer */
+  footer{background:#1a1a1a;color:#ddd;font-size:14px}
+  footer .wrap{padding:44px 20px 20px}
+  .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  footer h4{color:#fff;margin:0 0 12px;font-size:15px}
+  footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  footer a{text-decoration:none;color:#ccc}
+  footer a:hover{color:#fff;text-decoration:underline}
+  .bottom{border-top:1px solid #333;margin-top:30px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#999}
+  .bottom nav a{margin-left:16px}
+
+  /* floating side bar */
+  .side{position:fixed;right:0;top:34%;z-index:30;display:flex;flex-direction:column}
+  .side a{width:56px;height:56px;background:var(--red-bright);color:#fff;display:grid;place-items:center;text-decoration:none;font-size:11px;text-align:center;line-height:1.1;border-bottom:1px solid rgba(255,255,255,.25);padding:4px}
+  .side a:hover{background:var(--red-dark)}
+
+  @media(max-width:860px){
+    .util nav{display:none}
+    header nav.menu a:not(.btn-enq){display:none}
+    .burger{display:block}
+    h1{font-size:30px}
+    .card{padding:26px 20px 30px}
+    .grid{grid-template-columns:1fr}
+    .cols{grid-template-columns:1fr 1fr}
+    .side{display:none}
+    .progress .st span{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <div class="tf">Customer Toll Free No. : <b>1800 300 12345</b></div>
+    <nav>
+      <a href="#">Newsroom</a><a href="#">Image Gallery</a><a href="#">Blog</a><a href="#">About us</a><a href="#">Contact us</a>
+    </nav>
+  </div>
+</div>
+
+<header class="main">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="BharatBenz home"><i></i><span>BHARAT<b>BENZ</b></span></a>
+    <nav class="menu">
+      <a href="/trucks">Trucks</a>
+      <a href="/buses">Buses</a>
+      <a href="#">Parts and Services</a>
+      <a href="#">Pre-Owned Trucks</a>
+      <a href="#">Dealership</a>
+      <a href="#">Customers</a>
+      <a class="btn-enq" href="#enquiry">Enquire Now</a>
+    </nav>
+    <button class="burger" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<section class="banner">
+  <img src="https://www.bharatbenz.com/uploads/homebanner_images/large/BB-Construction.jpg" width="2062" height="583" alt="BharatBenz trucks - engineered for powerful performance" fetchpriority="high">
+</section>
+
+<section class="page-head">
+  <div class="wrap">
+    <a class="back" href="/trucks">&larr; Back to trucks</a>
+    <h1>Interested in a new BharatBenz truck?</h1>
+    <p class="sub">Tell us what you need and we will get back to you with pricing information</p>
+
+    <div class="progress" id="progress" aria-label="Progress">
+      <div class="st on" data-s="1"><div class="dot">1</div><span>Select series</span></div>
+      <div class="bar"></div>
+      <div class="st" data-s="2"><div class="dot">2</div><span>Your details</span></div>
+      <div class="bar"></div>
+      <div class="st" data-s="3"><div class="dot">3</div><span>Done</span></div>
+    </div>
+    <p class="req-note">Fields marked with an asterisk (*) are mandatory.</p>
+  </div>
+</section>
+
+<main id="enquiry">
+  <div class="card">
+
+    <!-- STEP 1 : series -->
+    <div class="step show" id="step1">
+      <h2>1. Please specify the series you're interested in.</h2>
+      <p class="lead">Pick a truck series to continue.</p>
+      <div class="series-pick">
+        <div class="field">
+          <label for="request">Request <em>*</em></label>
+          <select id="request">
+            <option value="">Select your request</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 : details -->
+    <div class="step" id="step2">
+      <button type="button" class="linkbtn" id="back">&larr; Back</button>
+      <h2>2. Please fill in the details.</h2>
+      <p class="lead">Interested in a new BharatBenz truck?</p>
+
+      <form id="truckForm" novalidate>
+        <div class="formerr" id="formerr" role="alert"></div>
+        <!-- honeypot -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+        <div class="grid">
+          <div class="field"><label for="first_name">First Name <em>*</em></label>
+            <input id="first_name" name="first_name" type="text" autocomplete="given-name" placeholder="Enter your first name">
+            <div class="err">Please enter your first name.</div></div>
+
+          <div class="field"><label for="last_name">Last Name <em>*</em></label>
+            <input id="last_name" name="last_name" type="text" autocomplete="family-name" placeholder="Enter your last name">
+            <div class="err">Please enter your last name.</div></div>
+
+          <div class="field"><label for="mobile">Contact Number <em>*</em></label>
+            <input id="mobile" name="mobile" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="Enter your contact number">
+            <div class="err">Enter a valid 10-digit mobile number.</div></div>
+
+          <div class="field"><label for="email">Email <em>*</em></label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="Enter your email ID">
+            <div class="err">Enter a valid email address.</div></div>
+
+          <div class="field"><label for="state">State <em>*</em></label>
+            <select id="state" name="state"><option value="">Select your state</option></select>
+            <div class="err">Please select your state.</div></div>
+
+          <div class="field" id="cityField"><label for="city">City/District <em>*</em></label>
+            <select id="city" name="city" disabled><option value="">Select your city/district</option></select>
+            <div class="err">Please select your city/district.</div></div>
+
+          <div class="field"><label for="series">Series <em>*</em></label>
+            <select id="series" name="series"><option value="">Select series</option></select>
+            <div class="err">Please select a series.</div></div>
+
+          <div class="field"><label for="product">Product <em>*</em></label>
+            <select id="product" name="product" disabled><option value="">Select series first</option></select>
+            <div class="err">Please select a product.</div></div>
+
+          <div class="field"><label for="unit">No. of Units <em>*</em></label>
+            <input id="unit" name="unit" type="text" inputmode="numeric" maxlength="3" placeholder="Enter number of units">
+            <div class="err">Enter a number between 1 and 999.</div></div>
+
+          <div class="field full"><label for="message">Message</label>
+            <textarea id="message" name="message" maxlength="500" placeholder="Enter your enquiry"></textarea></div>
+
+          <div class="field full">
+            <label class="check" id="c1l"><input type="checkbox" id="consent1">
+              <span>Disclaimer: By clicking "Get Quote", I agree to be contacted by BharatBenz and associates regarding my interest via phone call or any other medium.</span></label>
+          </div>
+          <div class="field full">
+            <label class="check" id="c2l"><input type="checkbox" id="consent2">
+              <span>By submitting, I accept the <a href="/terms-and-conditions" target="_blank" rel="noopener">T&amp;C</a> and <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</span></label>
+            <div class="err" id="consentErr" style="display:none">Please accept both statements to continue.</div>
+          </div>
+
+          <div class="full"><button class="btn" type="submit" id="submit">Get Quote</button></div>
+        </div>
+      </form>
+    </div>
+
+    <!-- STEP 3 : thank you -->
+    <div class="step" id="step3">
+      <div class="thanks">
+        <div class="tick">&#10003;</div>
+        <h2>Thank you for your truck enquiry!</h2>
+        <p>We will contact you shortly with pricing information.</p>
+        <a class="btn" href="/trucks">Explore trucks</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>Trucks</h4><ul><li><a href="#">MDT (10–19 t)</a></li><li><a href="#">HDT R (28–48 t)</a></li><li><a href="#">HDT RT (28–48 t)</a></li><li><a href="#">HDT C (19–35 t)</a></li><li><a href="#">HDT T (40–55 t)</a></li></ul></div>
+      <div><h4>Buses</h4><ul><li><a href="#">School Bus</a></li><li><a href="#">Staff Bus</a></li><li><a href="#">MDB 1914 chassis</a></li><li><a href="#">HDB 1624 chassis</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="#">Service Workshops</a></li><li><a href="#">Genuine Parts</a></li><li><a href="#">Rakshana</a></li><li><a href="#">Share your Feedback</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#">About us</a></li><li><a href="#">Find a Dealer</a></li><li><a href="#">Testimonials</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact us</a></li></ul></div>
+    </div>
+    <div class="bottom">
+      <div>COPYRIGHT © 2026 BHARATBENZ. ALL RIGHTS RESERVED.</div>
+      <nav><a href="#">Daimler Trucks</a><a href="#">Privacy Policy</a><a href="#">Legal Disclaimer</a></nav>
+    </div>
+  </div>
+</footer>
+
+<aside class="side" aria-label="Quick actions">
+  <a href="#enquiry">Get a Quote</a>
+  <a href="#">Service Workshop</a>
+  <a href="tel:1800121380380">Call Us</a>
+</aside>
+
+<script>
+/* ============================================================
+   CONFIG — wire these to the real BharatBenz backend
+   ============================================================ */
+var CONFIG = {
+  // POST target for the enquiry. Leave "" to run in demo mode (no network call).
+  SUBMIT_URL: "",
+  // Optional: returns a JSON array of city/district names for ?state=<name>.
+  // Leave "" to fall back to a free-text City/District input.
+  CITY_API: ""
+};
+
+/* Series list — verified from the live Enquire Now > Trucks form. */
+var SERIES = ["HDT C","HDT R","HDT RT","HDT T","MDT"];
+
+/* Series -> Product mapping.
+   The live form loads this from an API. Model names below come from the
+   BharatBenz homepage model list, grouped by suffix and weight class.
+   DRAFT: confirm each model's series against the live Product dropdown. */
+var PRODUCTS = {
+  "MDT":    ["914R","1014R","1015R","1214R","1215R","1216R","1217C","1414R","1613C","1617R","1917R"],
+  "HDT C":  ["1623C","1926C","2523C","2528C","2823C","2826C","3528C"],
+  "HDT R":  ["2523R","2823R","3123R","3523R","3723R","4228R","4828R"],
+  "HDT RT": ["3123RT","3723RT"],
+  "HDT T":  ["4023T","4928T","5428T","5528T"]
+};
+
+/* States — verified from the live form (values as submitted by the site). */
+var STATES = [
+  ["Andaman and Nico.In.","Andaman And Nico.in."],"Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh",
+  ["Dadra & Nagar Haveli and Daman & Diu","Dadra & Nagar Haveli And Daman & Diu"],"Delhi","Goa","Gujarat","Haryana",
+  "Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra",
+  "Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu",
+  "Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"
+];
+
+/* ============================================================ */
+var $ = function(id){ return document.getElementById(id); };
+
+function opt(sel, value, text){
+  var o = document.createElement("option");
+  o.value = value; o.textContent = text == null ? value : text;
+  sel.appendChild(o);
+}
+function reset(sel, placeholder, disabled){
+  sel.innerHTML = ""; opt(sel, "", placeholder); sel.disabled = !!disabled;
+}
+
+/* populate static lists */
+SERIES.forEach(function(s){ opt($("request"), s); opt($("series"), s); });
+STATES.forEach(function(s){ Array.isArray(s) ? opt($("state"), s[0], s[1]) : opt($("state"), s); });
+
+/* progress + step switching */
+function go(n){
+  [1,2,3].forEach(function(i){ $("step"+i).classList.toggle("show", i===n); });
+  document.querySelectorAll("#progress .st").forEach(function(el){
+    var s = +el.dataset.s;
+    el.classList.toggle("on", s===n);
+    el.classList.toggle("done", s<n);
+  });
+  document.querySelectorAll("#progress .bar").forEach(function(b,i){ b.classList.toggle("done", i+1<n); });
+  $("enquiry").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+/* product list follows series */
+function fillProducts(series){
+  var p = $("product");
+  if(!series){ reset(p, "Select series first", true); return; }
+  reset(p, "Select product", false);
+  (PRODUCTS[series] || []).forEach(function(m){ opt(p, m); });
+}
+
+/* step 1 -> 2 (auto-advance on pick, like the site) */
+$("request").addEventListener("change", function(){
+  if(!this.value) return;
+  $("series").value = this.value;
+  fillProducts(this.value);
+  go(2);
+});
+$("back").addEventListener("click", function(){ go(1); });
+$("series").addEventListener("change", function(){ fillProducts(this.value); });
+
+/* city follows state */
+var cityIsText = false;
+function setCityText(){
+  var f = $("cityField");
+  var inp = document.createElement("input");
+  inp.id = "city"; inp.name = "city"; inp.type = "text"; inp.placeholder = "Enter your city/district"; inp.disabled = true;
+  f.replaceChild(inp, $("city")); cityIsText = true;
+}
+if(!CONFIG.CITY_API) setCityText();
+
+$("state").addEventListener("change", function(){
+  var st = this.value, c = $("city");
+  if(cityIsText){ c.disabled = !st; return; }
+  if(!st){ reset(c, "Select your city/district", true); return; }
+  reset(c, "Loading...", true);
+  fetch(CONFIG.CITY_API + "?state=" + encodeURIComponent(st))
+    .then(function(r){ return r.json(); })
+    .then(function(list){
+      reset(c, "Select your city/district", false);
+      list.forEach(function(x){ opt(c, x); });
+    })
+    .catch(function(){ reset(c, "Could not load - retry", true); });
+});
+
+/* numeric-only inputs */
+["mobile","unit"].forEach(function(id){
+  $(id).addEventListener("input", function(){ this.value = this.value.replace(/\D/g, ""); });
+});
+
+/* validation */
+function setBad(el, bad){
+  var f = el.closest(".field"); if(f) f.classList.toggle("bad", bad);
+  return !bad;
+}
+var rules = {
+  first_name: function(v){ return v.trim().length > 0; },
+  last_name:  function(v){ return v.trim().length > 0; },
+  mobile:     function(v){ return /^[6-9]\d{9}$/.test(v); },
+  email:      function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); },
+  state:      function(v){ return !!v; },
+  city:       function(v){ return v.trim().length > 0; },
+  series:     function(v){ return !!v; },
+  product:    function(v){ return !!v; },
+  unit:       function(v){ var n = +v; return /^\d+$/.test(v) && n >= 1 && n <= 999; }
+};
+function validate(){
+  var ok = true, first = null;
+  Object.keys(rules).forEach(function(id){
+    var el = $(id), good = rules[id](el.value);
+    setBad(el, !good);
+    if(!good){ ok = false; if(!first) first = el; }
+  });
+  var cons = $("consent1").checked && $("consent2").checked;
+  $("consentErr").style.display = cons ? "none" : "block";
+  $("c1l").classList.toggle("bad", !$("consent1").checked);
+  $("c2l").classList.toggle("bad", !$("consent2").checked);
+  if(!cons) ok = false;
+  if(first) first.focus();
+  return ok;
+}
+Object.keys(rules).forEach(function(id){
+  ["input","change"].forEach(function(ev){
+    $(id).addEventListener(ev, function(){ if(this.closest(".field").classList.contains("bad")) setBad(this, !rules[id](this.value)); });
+  });
+});
+
+/* submit */
+$("truckForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var fe = $("formerr"); fe.classList.remove("show");
+  if(this.website.value) return;           // honeypot
+  if(!validate()) return;
+
+  var data = {
+    category: "Truck",
+    first_name: $("first_name").value.trim(),
+    last_name:  $("last_name").value.trim(),
+    mobile:     $("mobile").value,
+    email:      $("email").value.trim(),
+    state:      $("state").value,
+    city:       $("city").value.trim(),
+    series:     $("series").value,
+    product:    $("product").value,
+    unit:       $("unit").value,
+    message:    $("message").value.trim()
+  };
+
+  var btn = $("submit"); btn.disabled = true; btn.textContent = "Submitting...";
+  var done = function(){ btn.disabled = false; btn.textContent = "Get Quote"; go(3); };
+  var fail = function(){
+    btn.disabled = false; btn.textContent = "Get Quote";
+    fe.textContent = "Something went wrong. Please try again or call 1800 300 12345.";
+    fe.classList.add("show");
+  };
+
+  if(!CONFIG.SUBMIT_URL){ setTimeout(function(){ console.log("DEMO submit", data); done(); }, 600); return; }
+  fetch(CONFIG.SUBMIT_URL, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(data)})
+    .then(function(r){ if(!r.ok) throw 0; done(); })
+    .catch(fail);
+});
+
+/* header "Enquire Now" jumps to the form */
+document.querySelector(".btn-enq").addEventListener("click", function(){ go(document.querySelector(".step.show") === $("step3") ? 1 : +document.querySelector(".step.show").id.slice(4)); });
+</script>
+</body>
+</html>

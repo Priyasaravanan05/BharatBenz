@@ -20,3 +20,11 @@ Self-contained page in `select-my-truck/` (assets in `select-my-truck/assets/`),
 Notes: truck photos, hero and logos are cropped from the design screenshot — replace with originals (same file names). Sub-application options are filled per application in `SUBS` in the listing script (Agricultural Produce done). Body copy is placeholder text from the design.
 
 Agricultural Produce notes: truck thumbnails (1617R, 2826R, 3526R, 3832R) load directly from bharatbenz.com (`uploads/truck_images/product_types/`); the 1415R has no thumbnail on bharatbenz.com, so it keeps the grey truck outline placeholder. Sub-application pages and the 3832R / 1415R model URLs are not built yet, so those links point to bharatbenz.com.
+
+## Truck Enquiry
+
+Standalone page in `truck-enquiry/`:
+
+- `truck-enquiry/index.html` — Truck enquiry landing page in the become-a-dealer layout, with the Enquire Now > Trucks form flow (select series, details, thank-you). Banner is hot-linked from bharatbenz.com (`uploads/homebanner_images/large/BB-Construction.jpg`).
+
+Notes: `CONFIG` at the top of the script needs `SUBMIT_URL` (enquiry endpoint; empty = demo mode) and `CITY_API` (state to city list; empty = free-text city). The Series to Product mapping in `PRODUCTS` is a draft built from the homepage model list; confirm against the live Product dropdown. Header logo is a text placeholder.
