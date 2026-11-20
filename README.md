@@ -23,8 +23,8 @@ Agricultural Produce notes: truck thumbnails (1617R, 2826R, 3526R, 3832R) load d
 
 ## Truck Enquiry
 
-Standalone page in `truck-enquiry/`:
+Static UI-only page in `truck-enquiry/`:
 
-- `truck-enquiry/index.html` — Truck enquiry landing page in the become-a-dealer layout, with the Enquire Now > Trucks form flow (select series, details, thank-you). Banner is hot-linked from bharatbenz.com (`uploads/homebanner_images/large/BB-Construction.jpg`).
+- `truck-enquiry/index.html` — Truck enquiry landing page in the become-a-dealer layout, showing the Enquire Now > Trucks form (details step). No JavaScript: no validation, step switching, dependent dropdowns or submit. Banner is hot-linked from bharatbenz.com (`uploads/homebanner_images/large/BB-Construction.jpg`).
 
-Notes: `CONFIG` at the top of the script needs `SUBMIT_URL` (enquiry endpoint; empty = demo mode) and `CITY_API` (state to city list; empty = free-text city). The Series to Product mapping in `PRODUCTS` is a draft built from the homepage model list; confirm against the live Product dropdown. Header logo is a text placeholder.
+Notes: Product and City/District dropdowns are empty placeholders. Header logo is a text placeholder.

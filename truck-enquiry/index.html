@@ -171,9 +171,9 @@
     <p class="sub">Tell us what you need and we will get back to you with pricing information</p>
 
     <div class="progress" id="progress" aria-label="Progress">
-      <div class="st on" data-s="1"><div class="dot">1</div><span>Select series</span></div>
-      <div class="bar"></div>
-      <div class="st" data-s="2"><div class="dot">2</div><span>Your details</span></div>
+      <div class="st done" data-s="1"><div class="dot">1</div><span>Select series</span></div>
+      <div class="bar done"></div>
+      <div class="st on" data-s="2"><div class="dot">2</div><span>Your details</span></div>
       <div class="bar"></div>
       <div class="st" data-s="3"><div class="dot">3</div><span>Done</span></div>
     </div>
@@ -185,30 +185,25 @@
   <div class="card">
 
     <!-- STEP 1 : series -->
-    <div class="step show" id="step1">
+    <div class="step" id="step1">
       <h2>1. Please specify the series you're interested in.</h2>
       <p class="lead">Pick a truck series to continue.</p>
       <div class="series-pick">
         <div class="field">
           <label for="request">Request <em>*</em></label>
-          <select id="request">
-            <option value="">Select your request</option>
-          </select>
+          <select id="request"><option value="">Select your request</option><option>HDT C</option><option>HDT R</option><option>HDT RT</option><option>HDT T</option><option>MDT</option></select>
         </div>
       </div>
     </div>
 
     <!-- STEP 2 : details -->
-    <div class="step" id="step2">
-      <button type="button" class="linkbtn" id="back">&larr; Back</button>
+    <div class="step show" id="step2">
+      <button type="button" class="linkbtn">&larr; Back</button>
       <h2>2. Please fill in the details.</h2>
       <p class="lead">Interested in a new BharatBenz truck?</p>
 
-      <form id="truckForm" novalidate>
-        <div class="formerr" id="formerr" role="alert"></div>
-        <!-- honeypot -->
-        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-
+      <form id="truckForm" onsubmit="return false">
+        
         <div class="grid">
           <div class="field"><label for="first_name">First Name <em>*</em></label>
             <input id="first_name" name="first_name" type="text" autocomplete="given-name" placeholder="Enter your first name">
@@ -227,19 +222,19 @@
             <div class="err">Enter a valid email address.</div></div>
 
           <div class="field"><label for="state">State <em>*</em></label>
-            <select id="state" name="state"><option value="">Select your state</option></select>
+            <select id="state" name="state"><option value="">Select your state</option><option>Andaman And Nico.in.</option><option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option><option>Bihar</option><option>Chandigarh</option><option>Chhattisgarh</option><option>Dadra & Nagar Haveli And Daman & Diu</option><option>Delhi</option><option>Goa</option><option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option><option>Jammu & Kashmir</option><option>Jharkhand</option><option>Karnataka</option><option>Kerala</option><option>Lakshadweep</option><option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option><option>Odisha</option><option>Puducherry</option><option>Punjab</option><option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option></select>
             <div class="err">Please select your state.</div></div>
 
           <div class="field" id="cityField"><label for="city">City/District <em>*</em></label>
-            <select id="city" name="city" disabled><option value="">Select your city/district</option></select>
+            <select id="city" name="city"><option value="">Select your city/district</option></select>
             <div class="err">Please select your city/district.</div></div>
 
           <div class="field"><label for="series">Series <em>*</em></label>
-            <select id="series" name="series"><option value="">Select series</option></select>
+            <select id="series" name="series"><option value="">Select series</option><option>HDT C</option><option>HDT R</option><option>HDT RT</option><option>HDT T</option><option>MDT</option></select>
             <div class="err">Please select a series.</div></div>
 
           <div class="field"><label for="product">Product <em>*</em></label>
-            <select id="product" name="product" disabled><option value="">Select series first</option></select>
+            <select id="product" name="product"><option value="">Select product</option></select>
             <div class="err">Please select a product.</div></div>
 
           <div class="field"><label for="unit">No. of Units <em>*</em></label>
@@ -256,8 +251,7 @@
           <div class="field full">
             <label class="check" id="c2l"><input type="checkbox" id="consent2">
               <span>By submitting, I accept the <a href="/terms-and-conditions" target="_blank" rel="noopener">T&amp;C</a> and <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</span></label>
-            <div class="err" id="consentErr" style="display:none">Please accept both statements to continue.</div>
-          </div>
+                      </div>
 
           <div class="full"><button class="btn" type="submit" id="submit">Get Quote</button></div>
         </div>
@@ -298,191 +292,5 @@
   <a href="tel:1800121380380">Call Us</a>
 </aside>
 
-<script>
-/* ============================================================
-   CONFIG — wire these to the real BharatBenz backend
-   ============================================================ */
-var CONFIG = {
-  // POST target for the enquiry. Leave "" to run in demo mode (no network call).
-  SUBMIT_URL: "",
-  // Optional: returns a JSON array of city/district names for ?state=<name>.
-  // Leave "" to fall back to a free-text City/District input.
-  CITY_API: ""
-};
-
-/* Series list — verified from the live Enquire Now > Trucks form. */
-var SERIES = ["HDT C","HDT R","HDT RT","HDT T","MDT"];
-
-/* Series -> Product mapping.
-   The live form loads this from an API. Model names below come from the
-   BharatBenz homepage model list, grouped by suffix and weight class.
-   DRAFT: confirm each model's series against the live Product dropdown. */
-var PRODUCTS = {
-  "MDT":    ["914R","1014R","1015R","1214R","1215R","1216R","1217C","1414R","1613C","1617R","1917R"],
-  "HDT C":  ["1623C","1926C","2523C","2528C","2823C","2826C","3528C"],
-  "HDT R":  ["2523R","2823R","3123R","3523R","3723R","4228R","4828R"],
-  "HDT RT": ["3123RT","3723RT"],
-  "HDT T":  ["4023T","4928T","5428T","5528T"]
-};
-
-/* States — verified from the live form (values as submitted by the site). */
-var STATES = [
-  ["Andaman and Nico.In.","Andaman And Nico.in."],"Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh",
-  ["Dadra & Nagar Haveli and Daman & Diu","Dadra & Nagar Haveli And Daman & Diu"],"Delhi","Goa","Gujarat","Haryana",
-  "Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra",
-  "Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu",
-  "Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"
-];
-
-/* ============================================================ */
-var $ = function(id){ return document.getElementById(id); };
-
-function opt(sel, value, text){
-  var o = document.createElement("option");
-  o.value = value; o.textContent = text == null ? value : text;
-  sel.appendChild(o);
-}
-function reset(sel, placeholder, disabled){
-  sel.innerHTML = ""; opt(sel, "", placeholder); sel.disabled = !!disabled;
-}
-
-/* populate static lists */
-SERIES.forEach(function(s){ opt($("request"), s); opt($("series"), s); });
-STATES.forEach(function(s){ Array.isArray(s) ? opt($("state"), s[0], s[1]) : opt($("state"), s); });
-
-/* progress + step switching */
-function go(n){
-  [1,2,3].forEach(function(i){ $("step"+i).classList.toggle("show", i===n); });
-  document.querySelectorAll("#progress .st").forEach(function(el){
-    var s = +el.dataset.s;
-    el.classList.toggle("on", s===n);
-    el.classList.toggle("done", s<n);
-  });
-  document.querySelectorAll("#progress .bar").forEach(function(b,i){ b.classList.toggle("done", i+1<n); });
-  $("enquiry").scrollIntoView({behavior:"smooth", block:"start"});
-}
-
-/* product list follows series */
-function fillProducts(series){
-  var p = $("product");
-  if(!series){ reset(p, "Select series first", true); return; }
-  reset(p, "Select product", false);
-  (PRODUCTS[series] || []).forEach(function(m){ opt(p, m); });
-}
-
-/* step 1 -> 2 (auto-advance on pick, like the site) */
-$("request").addEventListener("change", function(){
-  if(!this.value) return;
-  $("series").value = this.value;
-  fillProducts(this.value);
-  go(2);
-});
-$("back").addEventListener("click", function(){ go(1); });
-$("series").addEventListener("change", function(){ fillProducts(this.value); });
-
-/* city follows state */
-var cityIsText = false;
-function setCityText(){
-  var f = $("cityField");
-  var inp = document.createElement("input");
-  inp.id = "city"; inp.name = "city"; inp.type = "text"; inp.placeholder = "Enter your city/district"; inp.disabled = true;
-  f.replaceChild(inp, $("city")); cityIsText = true;
-}
-if(!CONFIG.CITY_API) setCityText();
-
-$("state").addEventListener("change", function(){
-  var st = this.value, c = $("city");
-  if(cityIsText){ c.disabled = !st; return; }
-  if(!st){ reset(c, "Select your city/district", true); return; }
-  reset(c, "Loading...", true);
-  fetch(CONFIG.CITY_API + "?state=" + encodeURIComponent(st))
-    .then(function(r){ return r.json(); })
-    .then(function(list){
-      reset(c, "Select your city/district", false);
-      list.forEach(function(x){ opt(c, x); });
-    })
-    .catch(function(){ reset(c, "Could not load - retry", true); });
-});
-
-/* numeric-only inputs */
-["mobile","unit"].forEach(function(id){
-  $(id).addEventListener("input", function(){ this.value = this.value.replace(/\D/g, ""); });
-});
-
-/* validation */
-function setBad(el, bad){
-  var f = el.closest(".field"); if(f) f.classList.toggle("bad", bad);
-  return !bad;
-}
-var rules = {
-  first_name: function(v){ return v.trim().length > 0; },
-  last_name:  function(v){ return v.trim().length > 0; },
-  mobile:     function(v){ return /^[6-9]\d{9}$/.test(v); },
-  email:      function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); },
-  state:      function(v){ return !!v; },
-  city:       function(v){ return v.trim().length > 0; },
-  series:     function(v){ return !!v; },
-  product:    function(v){ return !!v; },
-  unit:       function(v){ var n = +v; return /^\d+$/.test(v) && n >= 1 && n <= 999; }
-};
-function validate(){
-  var ok = true, first = null;
-  Object.keys(rules).forEach(function(id){
-    var el = $(id), good = rules[id](el.value);
-    setBad(el, !good);
-    if(!good){ ok = false; if(!first) first = el; }
-  });
-  var cons = $("consent1").checked && $("consent2").checked;
-  $("consentErr").style.display = cons ? "none" : "block";
-  $("c1l").classList.toggle("bad", !$("consent1").checked);
-  $("c2l").classList.toggle("bad", !$("consent2").checked);
-  if(!cons) ok = false;
-  if(first) first.focus();
-  return ok;
-}
-Object.keys(rules).forEach(function(id){
-  ["input","change"].forEach(function(ev){
-    $(id).addEventListener(ev, function(){ if(this.closest(".field").classList.contains("bad")) setBad(this, !rules[id](this.value)); });
-  });
-});
-
-/* submit */
-$("truckForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  var fe = $("formerr"); fe.classList.remove("show");
-  if(this.website.value) return;           // honeypot
-  if(!validate()) return;
-
-  var data = {
-    category: "Truck",
-    first_name: $("first_name").value.trim(),
-    last_name:  $("last_name").value.trim(),
-    mobile:     $("mobile").value,
-    email:      $("email").value.trim(),
-    state:      $("state").value,
-    city:       $("city").value.trim(),
-    series:     $("series").value,
-    product:    $("product").value,
-    unit:       $("unit").value,
-    message:    $("message").value.trim()
-  };
-
-  var btn = $("submit"); btn.disabled = true; btn.textContent = "Submitting...";
-  var done = function(){ btn.disabled = false; btn.textContent = "Get Quote"; go(3); };
-  var fail = function(){
-    btn.disabled = false; btn.textContent = "Get Quote";
-    fe.textContent = "Something went wrong. Please try again or call 1800 300 12345.";
-    fe.classList.add("show");
-  };
-
-  if(!CONFIG.SUBMIT_URL){ setTimeout(function(){ console.log("DEMO submit", data); done(); }, 600); return; }
-  fetch(CONFIG.SUBMIT_URL, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(data)})
-    .then(function(r){ if(!r.ok) throw 0; done(); })
-    .catch(fail);
-});
-
-/* header "Enquire Now" jumps to the form */
-document.querySelector(".btn-enq").addEventListener("click", function(){ go(document.querySelector(".step.show") === $("step3") ? 1 : +document.querySelector(".step.show").id.slice(4)); });
-</script>
 </body>
 </html>
